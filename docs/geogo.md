@@ -1,0 +1,4 @@
+ 
+# geogo module
+
+::: geogo.geogo
