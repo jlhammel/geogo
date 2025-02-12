@@ -9,7 +9,7 @@
 
 -   Free software: MIT License
 -   Documentation: <https://jlhammel.github.io/geogo>
-    
+
 
 ## Features
 
