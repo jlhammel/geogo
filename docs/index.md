@@ -13,4 +13,10 @@
 
 ## Features
 
--   TODO
+- Process geospatial data
+
+## Usage
+```python
+import geogo
+import os
+```
