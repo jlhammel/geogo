@@ -81,6 +81,9 @@ nav:
     - Report Issues: https://github.com/jlhammel/geogo/issues
     - Examples:
         - examples/intro.ipynb
+        - examples/map.ipynb
+        - examples/foliummap.ipynb
     - API Reference:
           - geogo module: geogo.md
           - common module: common.md
+          - foliummap module: foliummap.md
