@@ -2,7 +2,6 @@
 
 import folium
 import folium.plugins
-from localtileserver import get_leaflet_tile_layer
 
 
 class Map(folium.Map):
@@ -97,7 +96,7 @@ class Map(folium.Map):
         folium.LayerControl().add_to(self)
 
     def add_split_map(self, left="openstreetmap", right="cartodbpositron", **kwargs):
-        """Add split map to the map to compare the two maps.
+        """Add split map to compare two maps.
 
         Args:
             left (str, optional): Map type on the left of the map. Defaults to 'openstreetmap'.
