@@ -112,3 +112,23 @@ class Map(folium.Map):
         layer_left.add_to(self)
         layer_right.add_to(self)
         sbs.add_to(self)
+
+    def add_raster(self, left, right, **kwargs):
+        """Add raster data to map.
+
+        Args:
+            left (_type_): Add raster data to the left of the map.
+            right (_type_):Add raster data to the right of the map.
+        """
+        from localtileserver import TileClient, get_folium_tile_layer
+
+        right_layer = get_folium_tile_layer(right, **kwargs)
+        left_layer = get_folium_tile_layer(left, **kwargs)
+
+        sbs = folium.plugins.SideBySideLayers(
+            layer_left=left_layer, layer_right=right_layer
+        )
+
+        left_layer.add_to(self)
+        right_layer.add_to(self)
+        sbs.add_to(self)
