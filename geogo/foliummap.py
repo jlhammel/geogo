@@ -1,11 +1,24 @@
 """This module provides a custom Map class that extends the folium.Map class"""
 
 import folium
+import folium.plugins
+from localtileserver import get_leaflet_tile_layer
 
 
 class Map(folium.Map):
     def __init__(self, center=(0, 0), zoom=2, **kwargs):
         super().__init__(location=center, zoom_start=zoom, **kwargs)
+
+    def add_basemap(self, basemap="OpenTopoMap"):
+        """Add basemap to the map.
+
+        Args:
+            basemap (str, optional): Basemap name. Defaults to "OpenTopoMap".
+        """
+
+        url = eval(f"folium.basemaps.{basemap}").build_url()
+        layer = folium.TileLayer(url=url, name=basemap)
+        self.add(layer)
 
     def add_geojson(
         self,
@@ -18,7 +31,7 @@ class Map(folium.Map):
 
         Args:
             data (_type_): _file path, GeoDataFrame, or GeoJSON dictionary.
-            zoom_to_layer (bool, optional): Zoom in to the layer on the map.. Defaults to True.
+            zoom_to_layer (bool, optional): Zoom in to the layer on the map. Defaults to True.
             hover_style (_type_, optional): Changes color when hover over place on map.. Defaults to None.
         """
         import geopandas as gpd
@@ -82,3 +95,21 @@ class Map(folium.Map):
     def add_layer_control(self):
         """Adds a layer control to the map."""
         folium.LayerControl().add_to(self)
+
+    def add_split_map(self, left="openstreetmap", right="cartodbpositron", **kwargs):
+        """Add split map to the map to compare the two maps.
+
+        Args:
+            left (str, optional): Map type on the left of the map. Defaults to 'openstreetmap'.
+            right (str, optional): Map type on the right of the map. Defaults to 'cartodbpositron'.
+        """
+        layer_right = folium.TileLayer(left, **kwargs)
+        layer_left = folium.TileLayer(right, **kwargs)
+
+        sbs = folium.plugins.SideBySideLayers(
+            layer_left=layer_left, layer_right=layer_right
+        )
+
+        layer_left.add_to(self)
+        layer_right.add_to(self)
+        sbs.add_to(self)
