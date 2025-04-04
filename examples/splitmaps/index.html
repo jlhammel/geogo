@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#split-map-demonstration" class="md-skip">
+        <a href="#split-maps-demonstration" class="md-skip">
           Skip to content
         </a>
       
@@ -519,6 +519,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../splitmap.ipynb" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -665,9 +688,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#split-map-demonstration" class="md-nav__link">
+  <a href="#split-maps-demonstration" class="md-nav__link">
     <span class="md-ellipsis">
-      Split Map Demonstration
+      Split Maps Demonstration
     </span>
   </a>
   
@@ -1143,7 +1166,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="split-map-demonstration">Split Map Demonstration<a class="anchor-link" href="#split-map-demonstration">¶</a></h2>
+<h2 id="split-maps-demonstration">Split Maps Demonstration<a class="anchor-link" href="#split-maps-demonstration">¶</a></h2>
 </div>
 </div>
 </div>
@@ -1249,7 +1272,7 @@ m</div>
             &lt;meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;
             &lt;style&gt;
-                #map_77320fe2e748851a6841aa96aec827b5 {
+                #map_94218f1f035525e99dad1d2145ef8c9d {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -1264,14 +1287,14 @@ m</div>
 &lt;body&gt;
     
     
-            &lt;div class="folium-map" id="map_77320fe2e748851a6841aa96aec827b5" &gt;&lt;/div&gt;
+            &lt;div class="folium-map" id="map_94218f1f035525e99dad1d2145ef8c9d" &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_77320fe2e748851a6841aa96aec827b5 = L.map(
-                "map_77320fe2e748851a6841aa96aec827b5",
+            var map_94218f1f035525e99dad1d2145ef8c9d = L.map(
+                "map_94218f1f035525e99dad1d2145ef8c9d",
                 {
                     center: [0.0, 0.0],
                     crs: L.CRS.EPSG3857,
@@ -1288,7 +1311,7 @@ m</div>
 
         
     
-            var tile_layer_13cb863724aa75ba1015846e3512e30b = L.tileLayer(
+            var tile_layer_66a68e368367129b70cdd31c2669a30d = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -1305,10 +1328,10 @@ m</div>
             );
         
     
-            tile_layer_13cb863724aa75ba1015846e3512e30b.addTo(map_77320fe2e748851a6841aa96aec827b5);
+            tile_layer_66a68e368367129b70cdd31c2669a30d.addTo(map_94218f1f035525e99dad1d2145ef8c9d);
         
     
-            var tile_layer_8259c1ce8070ee99031ea7ff3168a83a = L.tileLayer(
+            var tile_layer_7f379fb5b0a91ca44d79ffd9c0f4f548 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -1325,10 +1348,10 @@ m</div>
             );
         
     
-            tile_layer_8259c1ce8070ee99031ea7ff3168a83a.addTo(map_77320fe2e748851a6841aa96aec827b5);
+            tile_layer_7f379fb5b0a91ca44d79ffd9c0f4f548.addTo(map_94218f1f035525e99dad1d2145ef8c9d);
         
     
-            var tile_layer_4dbfb7bae204ec54db24a68c3cd71706 = L.tileLayer(
+            var tile_layer_17db57c2449c9ad0c9f5e49f2659cf66 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -1345,12 +1368,12 @@ m</div>
             );
         
     
-            tile_layer_4dbfb7bae204ec54db24a68c3cd71706.addTo(map_77320fe2e748851a6841aa96aec827b5);
+            tile_layer_17db57c2449c9ad0c9f5e49f2659cf66.addTo(map_94218f1f035525e99dad1d2145ef8c9d);
         
     
-            var side_by_side_layers_d10bde86543aa204ff30dff86aa0cbe7 = L.control.sideBySide(
-                tile_layer_8259c1ce8070ee99031ea7ff3168a83a, tile_layer_4dbfb7bae204ec54db24a68c3cd71706
-            ).addTo(map_77320fe2e748851a6841aa96aec827b5);
+            var side_by_side_layers_ee85ab4e30e9e50fac870fc0de3ab0c7 = L.control.sideBySide(
+                tile_layer_7f379fb5b0a91ca44d79ffd9c0f4f548, tile_layer_17db57c2449c9ad0c9f5e49f2659cf66
+            ).addTo(map_94218f1f035525e99dad1d2145ef8c9d);
         
 &lt;/script&gt;
 &lt;/html&gt;' style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" webkitallowfullscreen=""></iframe></div></div>
@@ -1423,7 +1446,7 @@ m</div>
             &lt;meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;
             &lt;style&gt;
-                #map_712115bb0d499b7ccd92231e5d16c062 {
+                #map_fb038757dcba22cffd32038306ef8d55 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -1438,14 +1461,14 @@ m</div>
 &lt;body&gt;
     
     
-            &lt;div class="folium-map" id="map_712115bb0d499b7ccd92231e5d16c062" &gt;&lt;/div&gt;
+            &lt;div class="folium-map" id="map_fb038757dcba22cffd32038306ef8d55" &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_712115bb0d499b7ccd92231e5d16c062 = L.map(
-                "map_712115bb0d499b7ccd92231e5d16c062",
+            var map_fb038757dcba22cffd32038306ef8d55 = L.map(
+                "map_fb038757dcba22cffd32038306ef8d55",
                 {
                     center: [0.0, 0.0],
                     crs: L.CRS.EPSG3857,
@@ -1462,7 +1485,7 @@ m</div>
 
         
     
-            var tile_layer_ab0c2ca0e69387fafbd9454ce9370f6b = L.tileLayer(
+            var tile_layer_faaa969ddc933a8c95e892da55410cbb = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -1479,10 +1502,10 @@ m</div>
             );
         
     
-            tile_layer_ab0c2ca0e69387fafbd9454ce9370f6b.addTo(map_712115bb0d499b7ccd92231e5d16c062);
+            tile_layer_faaa969ddc933a8c95e892da55410cbb.addTo(map_fb038757dcba22cffd32038306ef8d55);
         
     
-            var tile_layer_2774d6392714118f0ded64c7d7ed179f = L.tileLayer(
+            var tile_layer_0647e5767ad31b817cc8de015bcdc91b = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -1499,10 +1522,10 @@ m</div>
             );
         
     
-            tile_layer_2774d6392714118f0ded64c7d7ed179f.addTo(map_712115bb0d499b7ccd92231e5d16c062);
+            tile_layer_0647e5767ad31b817cc8de015bcdc91b.addTo(map_fb038757dcba22cffd32038306ef8d55);
         
     
-            var tile_layer_cb03c1ed97367d432932b5b4c235cb47 = L.tileLayer(
+            var tile_layer_d1cbad49c2c37903639661490750bea9 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -1519,12 +1542,12 @@ m</div>
             );
         
     
-            tile_layer_cb03c1ed97367d432932b5b4c235cb47.addTo(map_712115bb0d499b7ccd92231e5d16c062);
+            tile_layer_d1cbad49c2c37903639661490750bea9.addTo(map_fb038757dcba22cffd32038306ef8d55);
         
     
-            var side_by_side_layers_3448c8c510af508590a34705090e285e = L.control.sideBySide(
-                tile_layer_2774d6392714118f0ded64c7d7ed179f, tile_layer_cb03c1ed97367d432932b5b4c235cb47
-            ).addTo(map_712115bb0d499b7ccd92231e5d16c062);
+            var side_by_side_layers_11037654bcaa11bce06fb30b70e9fb91 = L.control.sideBySide(
+                tile_layer_0647e5767ad31b817cc8de015bcdc91b, tile_layer_d1cbad49c2c37903639661490750bea9
+            ).addTo(map_fb038757dcba22cffd32038306ef8d55);
         
 &lt;/script&gt;
 &lt;/html&gt;' style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" webkitallowfullscreen=""></iframe></div></div>
@@ -1603,7 +1626,7 @@ m</div>
             &lt;meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;
             &lt;style&gt;
-                #map_373ad25cde2901f29aaec51e48279199 {
+                #map_538007d92938a5a256d703b151556fff {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -1618,14 +1641,14 @@ m</div>
 &lt;body&gt;
     
     
-            &lt;div class="folium-map" id="map_373ad25cde2901f29aaec51e48279199" &gt;&lt;/div&gt;
+            &lt;div class="folium-map" id="map_538007d92938a5a256d703b151556fff" &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_373ad25cde2901f29aaec51e48279199 = L.map(
-                "map_373ad25cde2901f29aaec51e48279199",
+            var map_538007d92938a5a256d703b151556fff = L.map(
+                "map_538007d92938a5a256d703b151556fff",
                 {
                     center: [0.0, 0.0],
                     crs: L.CRS.EPSG3857,
@@ -1642,7 +1665,7 @@ m</div>
 
         
     
-            var tile_layer_d708b88f419479ccd025ad9459cba2e4 = L.tileLayer(
+            var tile_layer_16396b6302a5168960be5e65c7dde005 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -1659,11 +1682,11 @@ m</div>
             );
         
     
-            tile_layer_d708b88f419479ccd025ad9459cba2e4.addTo(map_373ad25cde2901f29aaec51e48279199);
+            tile_layer_16396b6302a5168960be5e65c7dde005.addTo(map_538007d92938a5a256d703b151556fff);
         
     
-            var tile_layer_3e215d7faf0bfeca9402c9a6971441ad = L.tileLayer(
-                "http://127.0.0.1:46377/api/tiles/{z}/{x}/{y}.png?\u0026filename=%2Fvsicurl%3Furl%3Dhttps%253A%252F%252Fgithub.com%252Fopengeos%252Fdatasets%252Freleases%252Fdownload%252Fraster%252Flandsat.tif%26use_head%3Dno%26list_dir%3Dno",
+            var tile_layer_bcdc686f848bdf97d9b2559f9cf501a2 = L.tileLayer(
+                "http://127.0.0.1:42475/api/tiles/{z}/{x}/{y}.png?\u0026filename=%2Fvsicurl%3Furl%3Dhttps%253A%252F%252Fgithub.com%252Fopengeos%252Fdatasets%252Freleases%252Fdownload%252Fraster%252Flandsat.tif%26use_head%3Dno%26list_dir%3Dno",
                 {
   "minZoom": 0,
   "maxZoom": 18,
@@ -1680,11 +1703,11 @@ m</div>
             );
         
     
-            tile_layer_3e215d7faf0bfeca9402c9a6971441ad.addTo(map_373ad25cde2901f29aaec51e48279199);
+            tile_layer_bcdc686f848bdf97d9b2559f9cf501a2.addTo(map_538007d92938a5a256d703b151556fff);
         
     
-            var tile_layer_aa58e7dff8b9a9143d51747511322299 = L.tileLayer(
-                "http://127.0.0.1:46377/api/tiles/{z}/{x}/{y}.png?\u0026filename=%2Fvsicurl%3Furl%3Dhttps%253A%252F%252Fgithub.com%252Fopengeos%252Fdatasets%252Freleases%252Fdownload%252Fraster%252Flandsat7.tif%26use_head%3Dno%26list_dir%3Dno",
+            var tile_layer_2437e958cf96e075fff55bf9414bfd22 = L.tileLayer(
+                "http://127.0.0.1:42475/api/tiles/{z}/{x}/{y}.png?\u0026filename=%2Fvsicurl%3Furl%3Dhttps%253A%252F%252Fgithub.com%252Fopengeos%252Fdatasets%252Freleases%252Fdownload%252Fraster%252Flandsat7.tif%26use_head%3Dno%26list_dir%3Dno",
                 {
   "minZoom": 0,
   "maxZoom": 18,
@@ -1701,12 +1724,12 @@ m</div>
             );
         
     
-            tile_layer_aa58e7dff8b9a9143d51747511322299.addTo(map_373ad25cde2901f29aaec51e48279199);
+            tile_layer_2437e958cf96e075fff55bf9414bfd22.addTo(map_538007d92938a5a256d703b151556fff);
         
     
-            var side_by_side_layers_500c6d5306bee4332b6c36eb12dd138b = L.control.sideBySide(
-                tile_layer_3e215d7faf0bfeca9402c9a6971441ad, tile_layer_aa58e7dff8b9a9143d51747511322299
-            ).addTo(map_373ad25cde2901f29aaec51e48279199);
+            var side_by_side_layers_12d5b1edc6752602e6d97e1ac454a877 = L.control.sideBySide(
+                tile_layer_bcdc686f848bdf97d9b2559f9cf501a2, tile_layer_2437e958cf96e075fff55bf9414bfd22
+            ).addTo(map_538007d92938a5a256d703b151556fff);
         
 &lt;/script&gt;
 &lt;/html&gt;' style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" webkitallowfullscreen=""></iframe></div></div>
@@ -1745,7 +1768,7 @@ m</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 4, 2025 21:33:29"><span class="timeago" datetime="2025-04-04T21:33:29+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 4, 2025 21:33:29">2025-04-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 4, 2025 22:10:51"><span class="timeago" datetime="2025-04-04T22:10:51+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 4, 2025 22:10:51">2025-04-04</span>
   </span>
 
     
