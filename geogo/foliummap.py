@@ -113,7 +113,7 @@ class Map(folium.Map):
         layer_right.add_to(self)
         sbs.add_to(self)
 
-    def add_raster(self, left, right, zoom, **kwargs):
+    def add_raster(self, left, right, **kwargs):
         """Add raster data to map.
 
         Args:
