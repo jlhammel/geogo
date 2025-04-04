@@ -114,7 +114,7 @@ class Map(folium.Map):
         sbs.add_to(self)
 
     def add_raster(self, left, right, **kwargs):
-        """Add raster data to map.
+        """Add raster data to maps.
 
         Args:
             left (_type_): Add raster data to the left of the map.
