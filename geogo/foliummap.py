@@ -2,6 +2,7 @@
 
 import folium
 import folium.plugins
+import os
 
 
 class Map(folium.Map):
