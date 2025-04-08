@@ -544,6 +544,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/raster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Raster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -749,15 +772,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#geogo.foliummap.Map.add_raster" class="md-nav__link">
-    <span class="md-ellipsis">
-      add_raster()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#geogo.foliummap.Map.add_shp" class="md-nav__link">
     <span class="md-ellipsis">
       add_shp()
@@ -881,15 +895,6 @@
   <a href="#geogo.foliummap.Map.add_layer_control" class="md-nav__link">
     <span class="md-ellipsis">
       add_layer_control()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#geogo.foliummap.Map.add_raster" class="md-nav__link">
-    <span class="md-ellipsis">
-      add_raster()
     </span>
   </a>
   
@@ -1078,15 +1083,61 @@ Map            (<span title="folium.folium.Map">Map</span>)
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a layer control to the map.&quot;&quot;&quot;</span>
         <span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">()</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
+    <span class="c1"># def add_split_map(self, left=&quot;openstreetmap&quot;, right=&quot;cartodbpositron&quot;, **kwargs):</span>
+    <span class="c1">#     &quot;&quot;&quot;Add split map to compare two maps.</span>
+
+    <span class="c1">#     Args:</span>
+    <span class="c1">#         left (str, optional): Map type on the left of the map. Defaults to &#39;openstreetmap&#39;.</span>
+    <span class="c1">#         right (str, optional): Map type on the right of the map. Defaults to &#39;cartodbpositron&#39;.</span>
+    <span class="c1">#     &quot;&quot;&quot;</span>
+    <span class="c1">#     layer_right = folium.TileLayer(left, **kwargs)</span>
+    <span class="c1">#     layer_left = folium.TileLayer(right, **kwargs)</span>
+
+    <span class="c1">#     sbs = folium.plugins.SideBySideLayers(</span>
+    <span class="c1">#         layer_left=layer_left, layer_right=layer_right</span>
+    <span class="c1">#     )</span>
+
+    <span class="c1">#     layer_left.add_to(self)</span>
+    <span class="c1">#     layer_right.add_to(self)</span>
+    <span class="c1">#     sbs.add_to(self)</span>
+
+    <span class="c1"># def add_raster(self, left, right, **kwargs):</span>
+    <span class="c1">#     &quot;&quot;&quot;Add raster data to maps.</span>
+
+    <span class="c1">#     Args:</span>
+    <span class="c1">#         left (_type_): Add raster data to the left of the map.</span>
+    <span class="c1">#         right (_type_):Add raster data to the right of the map.</span>
+    <span class="c1">#     &quot;&quot;&quot;</span>
+    <span class="c1">#     from localtileserver import TileClient, get_folium_tile_layer</span>
+
+    <span class="c1">#     right_layer = get_folium_tile_layer(right, **kwargs)</span>
+    <span class="c1">#     left_layer = get_folium_tile_layer(left, **kwargs)</span>
+
+    <span class="c1">#     sbs = folium.plugins.SideBySideLayers(</span>
+    <span class="c1">#         layer_left=left_layer, layer_right=right_layer</span>
+    <span class="c1">#     )</span>
+
+    <span class="c1">#     left_layer.add_to(self)</span>
+    <span class="c1">#     right_layer.add_to(self)</span>
+    <span class="c1">#     sbs.add_to(self)</span>
+
     <span class="k">def</span><span class="w"> </span><span class="nf">add_split_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="s2">&quot;openstreetmap&quot;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="s2">&quot;cartodbpositron&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add split map to compare two maps.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a split map to the map.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            left (str, optional): Map type on the left of the map. Defaults to &#39;openstreetmap&#39;.</span>
-<span class="sd">            right (str, optional): Map type on the right of the map. Defaults to &#39;cartodbpositron&#39;.</span>
+<span class="sd">            left (str, optional): The tile layer for the left side of the split map. Defaults to &quot;openstreetmap&quot;.</span>
+<span class="sd">            right (str, optional): The tile layer for the right side of the split map. Defaults to &quot;cartodbpositron&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">layer_right</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="n">layer_left</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">localtileserver</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_folium_tile_layer</span>
+
+        <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">left</span><span class="p">):</span>
+            <span class="n">layer_left</span> <span class="o">=</span> <span class="n">get_folium_tile_layer</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">layer_left</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">overlay</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">right</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">right</span><span class="p">):</span>
+            <span class="n">layer_right</span> <span class="o">=</span> <span class="n">get_folium_tile_layer</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">layer_right</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">overlay</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
         <span class="n">sbs</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">SideBySideLayers</span><span class="p">(</span>
             <span class="n">layer_left</span><span class="o">=</span><span class="n">layer_left</span><span class="p">,</span> <span class="n">layer_right</span><span class="o">=</span><span class="n">layer_right</span>
@@ -1094,26 +1145,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
 
         <span class="n">layer_left</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">layer_right</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="n">sbs</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">add_raster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add raster data to maps.</span>
-
-<span class="sd">        Args:</span>
-<span class="sd">            left (_type_): Add raster data to the left of the map.</span>
-<span class="sd">            right (_type_):Add raster data to the right of the map.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span><span class="w"> </span><span class="nn">localtileserver</span><span class="w"> </span><span class="kn">import</span> <span class="n">TileClient</span><span class="p">,</span> <span class="n">get_folium_tile_layer</span>
-
-        <span class="n">right_layer</span> <span class="o">=</span> <span class="n">get_folium_tile_layer</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="n">left_layer</span> <span class="o">=</span> <span class="n">get_folium_tile_layer</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-        <span class="n">sbs</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">SideBySideLayers</span><span class="p">(</span>
-            <span class="n">layer_left</span><span class="o">=</span><span class="n">left_layer</span><span class="p">,</span> <span class="n">layer_right</span><span class="o">=</span><span class="n">right_layer</span>
-        <span class="p">)</span>
-
-        <span class="n">left_layer</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="n">right_layer</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">sbs</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </code></pre></div>
         </details>
@@ -1349,74 +1380,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
 
 
 
-<h3 id="geogo.foliummap.Map.add_raster" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_raster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-
-<a href="#geogo.foliummap.Map.add_raster" class="headerlink" title="Permanent link">&para;</a></h3>
-
-    <div class="doc doc-contents ">
-
-      <p>Add raster data to maps.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>left</code></td>
-        <td><code>_type_</code></td>
-        <td><p>Add raster data to the left of the map.</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>right</code></td>
-        <td><code>_type_</code></td>
-        <td><p>Add raster data to the right of the map.</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-        <details class="quote">
-          <summary>Source code in <code>geogo/foliummap.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_raster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add raster data to maps.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        left (_type_): Add raster data to the left of the map.</span>
-<span class="sd">        right (_type_):Add raster data to the right of the map.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">localtileserver</span><span class="w"> </span><span class="kn">import</span> <span class="n">TileClient</span><span class="p">,</span> <span class="n">get_folium_tile_layer</span>
-
-    <span class="n">right_layer</span> <span class="o">=</span> <span class="n">get_folium_tile_layer</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">left_layer</span> <span class="o">=</span> <span class="n">get_folium_tile_layer</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-    <span class="n">sbs</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">SideBySideLayers</span><span class="p">(</span>
-        <span class="n">layer_left</span><span class="o">=</span><span class="n">left_layer</span><span class="p">,</span> <span class="n">layer_right</span><span class="o">=</span><span class="n">right_layer</span>
-    <span class="p">)</span>
-
-    <span class="n">left_layer</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-    <span class="n">right_layer</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-    <span class="n">sbs</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
 <h3 id="geogo.foliummap.Map.add_shp" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">add_shp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -1480,7 +1443,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
 
     <div class="doc doc-contents ">
 
-      <p>Add split map to compare two maps.</p>
+      <p>Adds a split map to the map.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -1496,13 +1459,13 @@ Map            (<span title="folium.folium.Map">Map</span>)
       <tr>
         <td><code>left</code></td>
         <td><code>str</code></td>
-        <td><p>Map type on the left of the map. Defaults to 'openstreetmap'.</p></td>
+        <td><p>The tile layer for the left side of the split map. Defaults to "openstreetmap".</p></td>
         <td><code>&#39;openstreetmap&#39;</code></td>
       </tr>
       <tr>
         <td><code>right</code></td>
         <td><code>str</code></td>
-        <td><p>Map type on the right of the map. Defaults to 'cartodbpositron'.</p></td>
+        <td><p>The tile layer for the right side of the split map. Defaults to "cartodbpositron".</p></td>
         <td><code>&#39;cartodbpositron&#39;</code></td>
       </tr>
   </tbody>
@@ -1510,14 +1473,22 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <details class="quote">
           <summary>Source code in <code>geogo/foliummap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_split_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="s2">&quot;openstreetmap&quot;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="s2">&quot;cartodbpositron&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add split map to compare two maps.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a split map to the map.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        left (str, optional): Map type on the left of the map. Defaults to &#39;openstreetmap&#39;.</span>
-<span class="sd">        right (str, optional): Map type on the right of the map. Defaults to &#39;cartodbpositron&#39;.</span>
+<span class="sd">        left (str, optional): The tile layer for the left side of the split map. Defaults to &quot;openstreetmap&quot;.</span>
+<span class="sd">        right (str, optional): The tile layer for the right side of the split map. Defaults to &quot;cartodbpositron&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">layer_right</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">layer_left</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">localtileserver</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_folium_tile_layer</span>
+
+    <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">left</span><span class="p">):</span>
+        <span class="n">layer_left</span> <span class="o">=</span> <span class="n">get_folium_tile_layer</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">layer_left</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">overlay</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">right</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">right</span><span class="p">):</span>
+        <span class="n">layer_right</span> <span class="o">=</span> <span class="n">get_folium_tile_layer</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">layer_right</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">overlay</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="n">sbs</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">plugins</span><span class="o">.</span><span class="n">SideBySideLayers</span><span class="p">(</span>
         <span class="n">layer_left</span><span class="o">=</span><span class="n">layer_left</span><span class="p">,</span> <span class="n">layer_right</span><span class="o">=</span><span class="n">layer_right</span>

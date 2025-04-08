@@ -18,7 +18,7 @@
         <link rel="prev" href="../foliummap/">
       
       
-        <link rel="next" href="../../geogo/">
+        <link rel="next" href="../raster/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -590,6 +590,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../raster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Raster
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1325,7 +1348,7 @@ m</div>
             &lt;meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;
             &lt;style&gt;
-                #map_98f44c9117813325be204106d0b2a1bd {
+                #map_9c8e9ba636cb49839117fb28e9a773a6 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -1340,14 +1363,14 @@ m</div>
 &lt;body&gt;
     
     
-            &lt;div class="folium-map" id="map_98f44c9117813325be204106d0b2a1bd" &gt;&lt;/div&gt;
+            &lt;div class="folium-map" id="map_9c8e9ba636cb49839117fb28e9a773a6" &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_98f44c9117813325be204106d0b2a1bd = L.map(
-                "map_98f44c9117813325be204106d0b2a1bd",
+            var map_9c8e9ba636cb49839117fb28e9a773a6 = L.map(
+                "map_9c8e9ba636cb49839117fb28e9a773a6",
                 {
                     center: [0.0, 0.0],
                     crs: L.CRS.EPSG3857,
@@ -1364,7 +1387,7 @@ m</div>
 
         
     
-            var tile_layer_359cb69744ec137821072f241905be2b = L.tileLayer(
+            var tile_layer_ee21869d441a12c251316392c45b1e65 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -1381,10 +1404,30 @@ m</div>
             );
         
     
-            tile_layer_359cb69744ec137821072f241905be2b.addTo(map_98f44c9117813325be204106d0b2a1bd);
+            tile_layer_ee21869d441a12c251316392c45b1e65.addTo(map_9c8e9ba636cb49839117fb28e9a773a6);
         
     
-            var tile_layer_6969e4c50c6eb4582df995f192bb04a0 = L.tileLayer(
+            var tile_layer_fef332cfaac85d5298d851ec71e5995a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fef332cfaac85d5298d851ec71e5995a.addTo(map_9c8e9ba636cb49839117fb28e9a773a6);
+        
+    
+            var tile_layer_5156909de198e9fc79fbdf0b47ee8d1e = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -1401,32 +1444,12 @@ m</div>
             );
         
     
-            tile_layer_6969e4c50c6eb4582df995f192bb04a0.addTo(map_98f44c9117813325be204106d0b2a1bd);
+            tile_layer_5156909de198e9fc79fbdf0b47ee8d1e.addTo(map_9c8e9ba636cb49839117fb28e9a773a6);
         
     
-            var tile_layer_1d3912eeff0f183d1e7d36b462d3a688 = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {
-  "minZoom": 0,
-  "maxZoom": 19,
-  "maxNativeZoom": 19,
-  "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
-  "subdomains": "abc",
-  "detectRetina": false,
-  "tms": false,
-  "opacity": 1,
-}
-
-            );
-        
-    
-            tile_layer_1d3912eeff0f183d1e7d36b462d3a688.addTo(map_98f44c9117813325be204106d0b2a1bd);
-        
-    
-            var side_by_side_layers_b2f2e25d87c57e13c6b41e2fa78be452 = L.control.sideBySide(
-                tile_layer_6969e4c50c6eb4582df995f192bb04a0, tile_layer_1d3912eeff0f183d1e7d36b462d3a688
-            ).addTo(map_98f44c9117813325be204106d0b2a1bd);
+            var side_by_side_layers_9c59407c9313aba8a96f02c173bb900e = L.control.sideBySide(
+                tile_layer_fef332cfaac85d5298d851ec71e5995a, tile_layer_5156909de198e9fc79fbdf0b47ee8d1e
+            ).addTo(map_9c8e9ba636cb49839117fb28e9a773a6);
         
 &lt;/script&gt;
 &lt;/html&gt;' style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" webkitallowfullscreen=""></iframe></div></div>
@@ -1499,7 +1522,7 @@ m</div>
             &lt;meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;
             &lt;style&gt;
-                #map_ee22ef1fbed2532adf49b91db985051a {
+                #map_8087121dcdcddc347d28c3564d9b6c3a {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -1514,14 +1537,14 @@ m</div>
 &lt;body&gt;
     
     
-            &lt;div class="folium-map" id="map_ee22ef1fbed2532adf49b91db985051a" &gt;&lt;/div&gt;
+            &lt;div class="folium-map" id="map_8087121dcdcddc347d28c3564d9b6c3a" &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_ee22ef1fbed2532adf49b91db985051a = L.map(
-                "map_ee22ef1fbed2532adf49b91db985051a",
+            var map_8087121dcdcddc347d28c3564d9b6c3a = L.map(
+                "map_8087121dcdcddc347d28c3564d9b6c3a",
                 {
                     center: [0.0, 0.0],
                     crs: L.CRS.EPSG3857,
@@ -1538,7 +1561,7 @@ m</div>
 
         
     
-            var tile_layer_eb63754874c1cf8a973bacc9f1b7eb7d = L.tileLayer(
+            var tile_layer_ec0bdebfe3c2019254951e33a63d4576 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -1555,30 +1578,10 @@ m</div>
             );
         
     
-            tile_layer_eb63754874c1cf8a973bacc9f1b7eb7d.addTo(map_ee22ef1fbed2532adf49b91db985051a);
+            tile_layer_ec0bdebfe3c2019254951e33a63d4576.addTo(map_8087121dcdcddc347d28c3564d9b6c3a);
         
     
-            var tile_layer_c5303dd45d225ffa635f40f28fd0406a = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {
-  "minZoom": 0,
-  "maxZoom": 19,
-  "maxNativeZoom": 19,
-  "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
-  "subdomains": "abc",
-  "detectRetina": false,
-  "tms": false,
-  "opacity": 1,
-}
-
-            );
-        
-    
-            tile_layer_c5303dd45d225ffa635f40f28fd0406a.addTo(map_ee22ef1fbed2532adf49b91db985051a);
-        
-    
-            var tile_layer_dffdb98ae00b645f9f7536f875877e1d = L.tileLayer(
+            var tile_layer_f4fd09c4ad29b5acf7fc89c9fc3339ba = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -1595,12 +1598,32 @@ m</div>
             );
         
     
-            tile_layer_dffdb98ae00b645f9f7536f875877e1d.addTo(map_ee22ef1fbed2532adf49b91db985051a);
+            tile_layer_f4fd09c4ad29b5acf7fc89c9fc3339ba.addTo(map_8087121dcdcddc347d28c3564d9b6c3a);
         
     
-            var side_by_side_layers_a88900cff0dbce18a0c0b7e673e34f56 = L.control.sideBySide(
-                tile_layer_c5303dd45d225ffa635f40f28fd0406a, tile_layer_dffdb98ae00b645f9f7536f875877e1d
-            ).addTo(map_ee22ef1fbed2532adf49b91db985051a);
+            var tile_layer_a5df0f34cd8b8d52b5e832f910f27406 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a5df0f34cd8b8d52b5e832f910f27406.addTo(map_8087121dcdcddc347d28c3564d9b6c3a);
+        
+    
+            var side_by_side_layers_84c3c92e9ca1a9cad8e598db1d00ee9e = L.control.sideBySide(
+                tile_layer_f4fd09c4ad29b5acf7fc89c9fc3339ba, tile_layer_a5df0f34cd8b8d52b5e832f910f27406
+            ).addTo(map_8087121dcdcddc347d28c3564d9b6c3a);
         
 &lt;/script&gt;
 &lt;/html&gt;' style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" webkitallowfullscreen=""></iframe></div></div>
@@ -1629,14 +1652,14 @@ m</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geogo</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_raster</span><span class="p">(</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add_split_map</span><span class="p">(</span>
     <span class="n">left</span><span class="o">=</span><span class="s2">"https://github.com/opengeos/datasets/releases/download/raster/landsat.tif"</span><span class="p">,</span>
     <span class="n">right</span><span class="o">=</span><span class="s2">"https://github.com/opengeos/datasets/releases/download/raster/landsat7.tif"</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">m</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-4">m = geogo.Map()
-m.add_raster(
+m.add_split_map(
     left="https://github.com/opengeos/datasets/releases/download/raster/landsat.tif",
     right="https://github.com/opengeos/datasets/releases/download/raster/landsat7.tif",
 )
@@ -1679,7 +1702,7 @@ m</div>
             &lt;meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /&gt;
             &lt;style&gt;
-                #map_e98eaca8f32e4bc8e11da9193a13112a {
+                #map_2b374b879a60196de20d79702ada71c0 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -1694,14 +1717,14 @@ m</div>
 &lt;body&gt;
     
     
-            &lt;div class="folium-map" id="map_e98eaca8f32e4bc8e11da9193a13112a" &gt;&lt;/div&gt;
+            &lt;div class="folium-map" id="map_2b374b879a60196de20d79702ada71c0" &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_e98eaca8f32e4bc8e11da9193a13112a = L.map(
-                "map_e98eaca8f32e4bc8e11da9193a13112a",
+            var map_2b374b879a60196de20d79702ada71c0 = L.map(
+                "map_2b374b879a60196de20d79702ada71c0",
                 {
                     center: [0.0, 0.0],
                     crs: L.CRS.EPSG3857,
@@ -1718,7 +1741,7 @@ m</div>
 
         
     
-            var tile_layer_6be87bf65e3533e9b9f96d9be8a7c3f3 = L.tileLayer(
+            var tile_layer_0d80d44f26c87cefd2016d73f096fbc5 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -1735,11 +1758,11 @@ m</div>
             );
         
     
-            tile_layer_6be87bf65e3533e9b9f96d9be8a7c3f3.addTo(map_e98eaca8f32e4bc8e11da9193a13112a);
+            tile_layer_0d80d44f26c87cefd2016d73f096fbc5.addTo(map_2b374b879a60196de20d79702ada71c0);
         
     
-            var tile_layer_3b8fbfa9f856e4303b668e2f98f9613e = L.tileLayer(
-                "http://127.0.0.1:42073/api/tiles/{z}/{x}/{y}.png?\u0026filename=%2Fvsicurl%3Furl%3Dhttps%253A%252F%252Fgithub.com%252Fopengeos%252Fdatasets%252Freleases%252Fdownload%252Fraster%252Flandsat.tif%26use_head%3Dno%26list_dir%3Dno",
+            var tile_layer_55c9e704aa5b0ee9bbf2129c4579de28 = L.tileLayer(
+                "http://127.0.0.1:43879/api/tiles/{z}/{x}/{y}.png?\u0026filename=%2Fvsicurl%3Furl%3Dhttps%253A%252F%252Fgithub.com%252Fopengeos%252Fdatasets%252Freleases%252Fdownload%252Fraster%252Flandsat.tif%26use_head%3Dno%26list_dir%3Dno",
                 {
   "minZoom": 0,
   "maxZoom": 18,
@@ -1756,11 +1779,11 @@ m</div>
             );
         
     
-            tile_layer_3b8fbfa9f856e4303b668e2f98f9613e.addTo(map_e98eaca8f32e4bc8e11da9193a13112a);
+            tile_layer_55c9e704aa5b0ee9bbf2129c4579de28.addTo(map_2b374b879a60196de20d79702ada71c0);
         
     
-            var tile_layer_ce395574370eb9d8f6ccdbbf3a9444e4 = L.tileLayer(
-                "http://127.0.0.1:42073/api/tiles/{z}/{x}/{y}.png?\u0026filename=%2Fvsicurl%3Furl%3Dhttps%253A%252F%252Fgithub.com%252Fopengeos%252Fdatasets%252Freleases%252Fdownload%252Fraster%252Flandsat7.tif%26use_head%3Dno%26list_dir%3Dno",
+            var tile_layer_eaa556f907164095f6f0150beba3f6a2 = L.tileLayer(
+                "http://127.0.0.1:43879/api/tiles/{z}/{x}/{y}.png?\u0026filename=%2Fvsicurl%3Furl%3Dhttps%253A%252F%252Fgithub.com%252Fopengeos%252Fdatasets%252Freleases%252Fdownload%252Fraster%252Flandsat7.tif%26use_head%3Dno%26list_dir%3Dno",
                 {
   "minZoom": 0,
   "maxZoom": 18,
@@ -1777,12 +1800,12 @@ m</div>
             );
         
     
-            tile_layer_ce395574370eb9d8f6ccdbbf3a9444e4.addTo(map_e98eaca8f32e4bc8e11da9193a13112a);
+            tile_layer_eaa556f907164095f6f0150beba3f6a2.addTo(map_2b374b879a60196de20d79702ada71c0);
         
     
-            var side_by_side_layers_f0d9e31be3efd84d0fa072fb9b417a04 = L.control.sideBySide(
-                tile_layer_3b8fbfa9f856e4303b668e2f98f9613e, tile_layer_ce395574370eb9d8f6ccdbbf3a9444e4
-            ).addTo(map_e98eaca8f32e4bc8e11da9193a13112a);
+            var side_by_side_layers_e050bf63ec3748c41f51c2f4577ee1f2 = L.control.sideBySide(
+                tile_layer_55c9e704aa5b0ee9bbf2129c4579de28, tile_layer_eaa556f907164095f6f0150beba3f6a2
+            ).addTo(map_2b374b879a60196de20d79702ada71c0);
         
 &lt;/script&gt;
 &lt;/html&gt;' style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" webkitallowfullscreen=""></iframe></div></div>
@@ -1821,7 +1844,7 @@ m</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 4, 2025 22:10:51"><span class="timeago" datetime="2025-04-04T22:10:51+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 4, 2025 22:10:51">2025-04-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 8, 2025 18:41:57"><span class="timeago" datetime="2025-04-08T18:41:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 8, 2025 18:41:57">2025-04-08</span>
   </span>
 
     
