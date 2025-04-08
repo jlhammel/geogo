@@ -84,6 +84,7 @@ nav:
         - examples/map.ipynb
         - examples/foliummap.ipynb
         - examples/splitmaps.ipynb
+        - examples/raster.ipynb
     - API Reference:
           - geogo module: geogo.md
           - common module: common.md
