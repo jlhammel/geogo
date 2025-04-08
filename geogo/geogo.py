@@ -100,7 +100,11 @@ class Map(ipyleaflet.Map):
         self.add_control(control)
 
     def add_raster(self, filepath, **kwargs):
-
+        """Adds a raster layer to the map.
+        Args:
+            filepath (str): The file path to the raster file.
+            **kwargs: Additional keyword arguments for the ipyleaflet.TileLayer layer.
+        """
         from localtileserver import TileClient, get_leaflet_tile_layer
 
         client = TileClient(filepath)
