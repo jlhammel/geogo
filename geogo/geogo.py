@@ -3,6 +3,7 @@
 import os
 import ipyleaflet
 import geopandas as gpd
+import localtileserver
 
 
 class Map(ipyleaflet.Map):
