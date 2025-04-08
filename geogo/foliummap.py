@@ -2,6 +2,7 @@
 
 import folium
 import folium.plugins
+import os
 
 
 class Map(folium.Map):
@@ -95,15 +96,61 @@ class Map(folium.Map):
         """Adds a layer control to the map."""
         folium.LayerControl().add_to(self)
 
+    # def add_split_map(self, left="openstreetmap", right="cartodbpositron", **kwargs):
+    #     """Add split map to compare two maps.
+
+    #     Args:
+    #         left (str, optional): Map type on the left of the map. Defaults to 'openstreetmap'.
+    #         right (str, optional): Map type on the right of the map. Defaults to 'cartodbpositron'.
+    #     """
+    #     layer_right = folium.TileLayer(left, **kwargs)
+    #     layer_left = folium.TileLayer(right, **kwargs)
+
+    #     sbs = folium.plugins.SideBySideLayers(
+    #         layer_left=layer_left, layer_right=layer_right
+    #     )
+
+    #     layer_left.add_to(self)
+    #     layer_right.add_to(self)
+    #     sbs.add_to(self)
+
+    # def add_raster(self, left, right, **kwargs):
+    #     """Add raster data to maps.
+
+    #     Args:
+    #         left (_type_): Add raster data to the left of the map.
+    #         right (_type_):Add raster data to the right of the map.
+    #     """
+    #     from localtileserver import TileClient, get_folium_tile_layer
+
+    #     right_layer = get_folium_tile_layer(right, **kwargs)
+    #     left_layer = get_folium_tile_layer(left, **kwargs)
+
+    #     sbs = folium.plugins.SideBySideLayers(
+    #         layer_left=left_layer, layer_right=right_layer
+    #     )
+
+    #     left_layer.add_to(self)
+    #     right_layer.add_to(self)
+    #     sbs.add_to(self)
+
     def add_split_map(self, left="openstreetmap", right="cartodbpositron", **kwargs):
-        """Add split map to compare two maps.
+        """Adds a split map to the map.
 
         Args:
-            left (str, optional): Map type on the left of the map. Defaults to 'openstreetmap'.
-            right (str, optional): Map type on the right of the map. Defaults to 'cartodbpositron'.
+            left (str, optional): The tile layer for the left side of the split map. Defaults to "openstreetmap".
+            right (str, optional): The tile layer for the right side of the split map. Defaults to "cartodbpositron".
         """
-        layer_right = folium.TileLayer(left, **kwargs)
-        layer_left = folium.TileLayer(right, **kwargs)
+        from localtileserver import get_folium_tile_layer
+
+        if left.startswith("http") or os.path.exists(left):
+            layer_left = get_folium_tile_layer(left, **kwargs)
+        else:
+            layer_left = folium.TileLayer(left, overlay=True, **kwargs)
+        if right.startswith("http") or os.path.exists(right):
+            layer_right = get_folium_tile_layer(right, **kwargs)
+        else:
+            layer_right = folium.TileLayer(right, overlay=True, **kwargs)
 
         sbs = folium.plugins.SideBySideLayers(
             layer_left=layer_left, layer_right=layer_right
@@ -111,24 +158,4 @@ class Map(folium.Map):
 
         layer_left.add_to(self)
         layer_right.add_to(self)
-        sbs.add_to(self)
-
-    def add_raster(self, left, right, **kwargs):
-        """Add raster data to maps.
-
-        Args:
-            left (_type_): Add raster data to the left of the map.
-            right (_type_):Add raster data to the right of the map.
-        """
-        from localtileserver import TileClient, get_folium_tile_layer
-
-        right_layer = get_folium_tile_layer(right, **kwargs)
-        left_layer = get_folium_tile_layer(left, **kwargs)
-
-        sbs = folium.plugins.SideBySideLayers(
-            layer_left=left_layer, layer_right=right_layer
-        )
-
-        left_layer.add_to(self)
-        right_layer.add_to(self)
         sbs.add_to(self)
