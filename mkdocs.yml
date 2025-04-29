@@ -86,7 +86,6 @@ nav:
         - examples/splitmaps.ipynb
         - examples/raster.ipynb
         - examples/widget.ipynb
-        - examples/storm.ipynb
         - examples/leafmap.ipynb
     - API Reference:
           - geogo module: geogo.md
