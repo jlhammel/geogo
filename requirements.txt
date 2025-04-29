@@ -1,7 +1,9 @@
+fiona
 folium
 geopandas
 ipyleaflet
 leafmap
 localtileserver
+mapclassify
 matplotlib
 numpy
