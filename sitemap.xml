@@ -2,66 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jlhammel.github.io/geogo/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/changelog/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/common/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/contributing/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/faq/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/foliummap/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/geogo/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/installation/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/usage/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jlhammel.github.io/geogo/examples/StormWMS/</loc>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/examples/foliummap/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/examples/intro/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/examples/leafmap/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/examples/map/</loc>
-         <lastmod>2025-04-29</lastmod>
-    </url>
-    <url>
-         <loc>https://jlhammel.github.io/geogo/examples/raster/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
          <loc>https://jlhammel.github.io/geogo/examples/splitmaps/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <lastmod>2025-05-05</lastmod>
     </url>
     <url>
-         <loc>https://jlhammel.github.io/geogo/examples/widget/</loc>
-         <lastmod>2025-04-29</lastmod>
+         <loc>https://jlhammel.github.io/geogo/examples/storm/</loc>
+         <lastmod>2025-05-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jlhammel.github.io/geogo/examples/stormriv/</loc>
+         <lastmod>2025-05-05</lastmod>
     </url>
 </urlset>
