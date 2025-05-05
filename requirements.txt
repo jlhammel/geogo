@@ -7,4 +7,4 @@ localtileserver
 mapclassify
 matplotlib
 numpy
-
+tropycal
