@@ -50,7 +50,7 @@ plugins:
           execute: True
           allow_errors: false
           ignore: ["conf.py"]
-          execute_ignore: ["*ignore.ipynb"]
+          execute_ignore: ["StormWMS.ipynb", "stormriv.ipynb", "storm.ipynb"]
 
 markdown_extensions:
     - admonition
@@ -84,10 +84,11 @@ nav:
         - examples/map.ipynb
         - examples/foliummap.ipynb
         - examples/splitmaps.ipynb
-        - examples/raster.ipynb
+        - examples/stormriv.ipynb
         - examples/widget.ipynb
         - examples/storm.ipynb
         - examples/leafmap.ipynb
+        - examples/StormWMS.ipynb
     - API Reference:
           - geogo module: geogo.md
           - common module: common.md
