@@ -2,11 +2,13 @@
 
 import ipyleaflet
 import geopandas as gpd
-import localtileserver
-import ipywidgets
-import tropycal
+
+# import localtileserver
+# import ipywidgets
+# import tropycal
 import datetime as dt
-import cartopy
+
+# import cartopy
 
 
 class Map(ipyleaflet.Map):
