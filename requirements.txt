@@ -1,3 +1,4 @@
+cartopy
 fiona
 folium
 geopandas
