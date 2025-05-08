@@ -2,13 +2,7 @@
 
 import ipyleaflet
 import geopandas as gpd
-
-# import localtileserver
-# import ipywidgets
-# import tropycal
 import datetime as dt
-
-# import cartopy
 
 
 class Map(ipyleaflet.Map):
@@ -18,7 +12,7 @@ class Map(ipyleaflet.Map):
         self.layout.height = height
         self.scroll_wheel_zoom = True
 
-    def add_basemap(self, basemap="Esri.WorldImagery"):
+    def add_basemap(self, basemap="OpenStreetMap.Mapnik"):
         """Add basemap to the map.
 
         Args:
@@ -107,7 +101,7 @@ class Map(ipyleaflet.Map):
         for _, row in gdf_line.iterrows():
             self.add_gdf(
                 gpd.GeoDataFrame([row], crs="EPSG:4326"),
-                style={"color": row["color"], "weight": 3},
+                style={"color": row["color"], "weight": 3, "weight": 8},
                 zoom_to_layer=False,
             )
 
@@ -122,7 +116,7 @@ class Map(ipyleaflet.Map):
         dataset = tracks.TrackDataset(basin=basin, source=source)
         storms = dataset.keys
         years = [dataset.get_storm(storm).season for storm in storms]
-        return list(zip(storms, years))  # [(storm_name, year), ...]
+        return list(zip(storms, years))
 
     def add_storm_wg(
         self,
@@ -134,52 +128,35 @@ class Map(ipyleaflet.Map):
     ):
         """Adds a storm widget to the map.
         Args:
-            basin (str): The basin of the storm. Defaults to "north_atlantic".
+            basin (str): The basin of the storm. Defaults to 'north_atlantic'.
             options (list, optional): A list of basemap options to display in the dropdown.
-                Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery", "CartoDB.DarkMatter"].
-            source (str): The source of the storm data. Defaults to "hurdat".
-            position (str): The position of the widget on the map. Defaults to "topright".
-            legend (bool): Whether to show a legend for storm categories. Defaults to True.
+                Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery"].
+            source (str): The source of the storm data. Defaults to 'hurdat'.
+            position (str): The position of the widget on the map. Defaults to 'topright'.
+            legend (bool): Whether to show a legend. Defaults to True.
         """
         import ipywidgets as widgets
         import tropycal.tracks as tracks
-        from ipyleaflet import LegendControl, WidgetControl
+        from ipyleaflet import WidgetControl
 
         if options is None:
-            options = ["OpenStreetMap", "OpenTopoMap", "Esri.WorldImagery"]
+            options = ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery"]
 
-        toggle_button = widgets.ToggleButton(
+        widget_toggle = widgets.ToggleButton(
             value=True,
             icon="globe",
             tooltip="Show/Hide storm & basemap",
             layout=widgets.Layout(width="38px", height="38px"),
         )
 
-        basemap_dropdown = widgets.Dropdown(
-            options=options,
-            value=options[0],
-            description="Basemap:",
-            style={"description_width": "initial"},
-            layout=widgets.Layout(width="250px", height="38px"),
-        )
-
-        def on_basemap_change(change):
-            if change["new"]:
-                self.layers = self.layers[:-2]
-                self.add_basemap(change["new"])
-
-        basemap_dropdown.observe(on_basemap_change, names="value")
-
         storm_list = [
             ("Wilma", 2005),
             ("Katrina", 2005),
             ("Rita", 2005),
             ("Sandy", 2012),
-            ("Gert", 2016),
             ("Hermine", 2016),
             ("Matthew", 2016),
             ("Otto", 2016),
-            ("Patricia", 2015),
             ("Nate", 2017),
             ("Harvey", 2017),
             ("Irma", 2017),
@@ -226,33 +203,61 @@ class Map(ipyleaflet.Map):
 
         storm_dropdown.observe(on_storm_change, names="value")
 
-        controls_box = widgets.VBox([basemap_dropdown, storm_dropdown])
+        controls_box = widgets.VBox([storm_dropdown])
+        controls_box.layout.display = "flex" if widget_toggle.value else "none"
 
-        def toggle_visibility(change):
+        widget_control = WidgetControl(
+            widget=widgets.VBox([widget_toggle, controls_box]), position=position
+        )
+        self.add(widget_control)
+
+        def toggle_controls(change):
             controls_box.layout.display = "flex" if change["new"] else "none"
 
-        toggle_button.observe(toggle_visibility, names="value")
-
-        controls_box.layout.display = "flex" if toggle_button.value else "none"
-
-        unified_widget = widgets.VBox([toggle_button, controls_box])
-        control = WidgetControl(widget=unified_widget, position=position)
-        self.add(control)
+        widget_toggle.observe(toggle_controls, names="value")
 
         if legend:
+            import ipywidgets as widgets
+            from ipyleaflet import WidgetControl
+
             category_colors = {
                 "TD": "#6baed6",
                 "TS": "#3182bd",
                 "Category 1": "#31a354",
                 "Category 2": "#addd8e",
                 "Category 3": "#fdae6b",
-                "Category 4": "#fd8d3c",
+                "Category 4": "#fd8d8c",
                 "Category 5": "#e31a1c",
             }
-            legend_control = LegendControl(
-                legend=category_colors, title="Storm Categories", position="bottomright"
+
+            legend_items = []
+            for label, color in category_colors.items():
+                legend_items.append(
+                    f"<div style='margin-bottom:2px;'><span style='display:inline-block;width:12px;height:12px;background:{color};margin-right:6px;'></span>{label}</div>"
+                )
+
+            legend_html = widgets.HTML(
+                value=f"<div style='padding:4px 8px;font-size:13px;line-height:1.4;'><b>Storm<br>Categories</b><hr style='margin:4px 0;'/>"
+                + "".join(legend_items)
+                + "</div>"
             )
-            self.add_control(legend_control)
+
+            toggle_legend_btn = widgets.ToggleButton(
+                value=True,
+                icon="list",
+                tooltip="Show/Hide legend",
+                layout=widgets.Layout(width="38px", height="38px"),
+            )
+
+            legend_box = widgets.VBox([toggle_legend_btn, legend_html])
+
+            def toggle_legend_display(change):
+                legend_html.layout.display = "block" if change["new"] else "none"
+
+            toggle_legend_btn.observe(toggle_legend_display, names="value")
+
+            legend_control = WidgetControl(widget=legend_box, position="bottomright")
+            self.add(legend_control)
 
     def add_wms_layer(
         self,
@@ -285,23 +290,26 @@ class Map(ipyleaflet.Map):
         transparent=True,
         attribution="NASA GIBS",
         name="Time WMS Layer",
+        legend=True,
+        custom_legend=None,
+        position="bottomleft",
     ):
-        """Adds a time-enabled WMS layer to the map.
-
+        """Adds a WMS layer with time control to the map.
         Args:
-            m (Map): ipyleaflet Map instance.
-            url (str): WMS service URL (GIBS or compatible).
-            layers (str): Name of the WMS layer.
-            time (str): Date in 'YYYY-MM-DD' format.
-            format (str): MIME type of the image layer.
-            transparent (bool): If background should be transparent.
-            attribution (str): Attribution text.
-            name (str): Display name for the layer.
-
-        Returns:
-            WMSLayer: The added WMS layer.
+            url (str): The WMS service URL. Defaults to "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi".
+            layers (str): The layers to display. Defaults to "MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day".
+            time (str): The time parameter for the WMS request. Defaults to "2020-07-05".
+            format (str): The image format. Defaults to "image/png".
+            transparent (bool): Whether the layer is transparent. Defaults to True.
+            attribution (str): Attribution text. Defaults to "NASA GIBS".
+            name (str): Name of the layer. Defaults to "Time WMS Layer".
+            legend (bool): Whether to show a legend. Defaults to True.
+            custom_legend (dict, optional): Custom legend items. Defaults to None.
+            position (str): Position of the legend on the map. Defaults to "bottomleft".
         """
-        from ipyleaflet import WMSLayer
+        from ipyleaflet import WMSLayer, WidgetControl
+        import ipywidgets as widgets
+        from datetime import date
 
         time_url = f"{url}?TIME={time}"
 
@@ -313,8 +321,85 @@ class Map(ipyleaflet.Map):
             attribution=attribution,
             name=name,
         )
-
         self.add_layer(wms_layer)
+
+        date_picker = widgets.DatePicker(
+            description="Select Date",
+            value=date.fromisoformat(time),
+            layout=widgets.Layout(width="200px"),
+        )
+
+        def update_time(change):
+            if change["new"]:
+                new_date = change["new"].isoformat()
+                wms_layer.url = f"{url}?TIME={new_date}"
+
+        date_picker.observe(update_time, names="value")
+
+        date_control = WidgetControl(widget=date_picker, position="topright")
+        self.add_control(date_control)
+
+        if legend:
+            built_in_legends = {
+                "MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day": {
+                    "< -10°C": "#313695",
+                    "-10 to 0°C": "#4575b4",
+                    "0 to 10°C": "#74add1",
+                    "10 to 20°C": "#abd9e9",
+                    "20 to 30°C": "#fdae61",
+                    "> 30°C": "#d73027",
+                }
+            }
+
+            legend_items = custom_legend or built_in_legends.get(layers)
+
+            if legend_items:
+                title_html = (
+                    "<div style='text-align:center; font-size:12px; font-weight:bold;'>"
+                    f"{layers.replace('_', ' ')}".replace(
+                        "MODIS Aqua L3", "MODIS Aqua L3<br>Land Surface Temp"
+                    )
+                    + "</div><hr style='margin:2px 0;'>"
+                )
+
+                legend_html = widgets.HTML()
+                legend_html.value = (
+                    f"<div style='font-size:12px; line-height:1.4em; max-width:160px;'>"
+                    f"{title_html}"
+                )
+
+                for label, color in legend_items.items():
+                    legend_html.value += (
+                        f"<div style='display:flex; align-items:center; justify-content:center; margin:2px 0;'>"
+                        f"<span style='display:inline-block;width:12px;height:12px;"
+                        f"background:{color};margin-right:6px;border:1px solid #ccc;'></span>"
+                        f"<span style='text-align:center;'>{label}</span>"
+                        f"</div>"
+                    )
+                legend_html.value += "</div>"
+
+                legend_box = widgets.VBox([legend_html])
+                legend_box.layout.display = "flex"
+                legend_box.layout.padding = "2px 6px"
+
+                toggle_button = widgets.ToggleButton(
+                    value=True,
+                    tooltip="Toggle Legend",
+                    icon="list",
+                    layout=widgets.Layout(width="26px", height="26px", padding="0"),
+                )
+
+                def toggle_visibility(change):
+                    legend_box.layout.display = "flex" if change["new"] else "none"
+
+                toggle_button.observe(toggle_visibility, names="value")
+
+                widget = widgets.VBox([toggle_button, legend_box])
+                control = WidgetControl(widget=widget, position=position)
+                self.add_control(control)
+            else:
+                print(f"No legend available for layer: {layers}")
+
         return wms_layer
 
     def add_geojson(
@@ -438,185 +523,3 @@ class Map(ipyleaflet.Map):
             bounds = [[-90, -180], [90, 180]]
         overlay = ipyleaflet.VideoOverlay(url=video, bounds=bounds, **kwargs)
         self.add(overlay)
-
-    # def add_split_map(self, left_date, right_date, **kwargs):
-    #     """Adds a split map to the map.
-
-    #     Args:
-    #         left_layer (ipyleaflet.Layer): The layer for the left side of the split map.
-    #         right_layer (ipyleaflet.Layer): The layer for the right side of the split map.
-    #         **kwargs: Additional keyword arguments for the ipyleaflet.SplitMapControl layer.
-    #     """
-    #     from ipyleaflet import TileLayer, SplitMapControl
-
-    #     left_layer = TileLayer(
-    #         url=f"https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Aqua_L3_EVI_16Day/default/{left_date}/GoogleMapsCompatible_Level9/{{z}}/{{y}}/{{x}}.jpg",
-    #         layers='MODIS_Aqua_L3_EVI_16Day',
-    #         format="image/png",
-    #         transparent=True,
-    #     )
-
-    #     right_layer = TileLayer(
-    #         url=f"https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Aqua_L3_EVI_16Day/default/{right_date}/GoogleMapsCompatible_Level9/{{z}}/{{y}}/{{x}}.jpg",
-    #         layers='MODIS_Aqua_L3_EVI_16Day',
-    #         format="image/png",
-    #         transparent=True,
-    #     )
-    #     print(left_layer.url)
-
-    #     print(right_layer.url)
-    #     control = SplitMapControl(
-    #         left_layer=left_layer, right_layer=right_layer, **kwargs
-    #     )
-    #     self.add_control(control)
-
-    #     import ipywidgets as widgets
-    #     from datetime import date
-
-    #     left_date_picker = widgets.DatePicker(
-    #         description="Left Date",
-    #         value=date.fromisoformat(left_date),
-    #         layout=widgets.Layout(width="200px"),
-    #     )
-
-    #     right_date_picker = widgets.DatePicker(
-    #         description="Right Date",
-    #         value=date.fromisoformat(right_date),
-    #         layout=widgets.Layout(width="200px"),
-    #     )
-
-    #     toggle = widgets.ToggleButton(
-    #         value=True,
-    #         icon="globe",
-    #         tooltip="Show/Hide storm selector",
-    #         layout=widgets.Layout(width="38px", height="38px"),
-    #     )
-    #     widget_box = widgets.HBox([toggle, left_date_picker, right_date_picker])
-
-    #     def on_date_change(change):
-    #         if change["name"] == "value" and change["new"] is not None:
-    #             new_left_date = left_date_picker.value.isoformat()
-    #             new_right_date = right_date_picker.value.isoformat()
-
-    #             left_layer.url = (
-    #                 f"https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Aqua_L3_EVI_16Day/default/"
-    #                 f"{new_left_date}/GoogleMapsCompatible_Level9/{{z}}/{{y}}/{{x}}.jpg"
-    #             )
-
-    #             right_layer.url = (
-    #                 f"https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Aqua_L3_EVI_16Day/default/"
-    #                 f"{new_right_date}/GoogleMapsCompatible_Level9/{{z}}/{{y}}/{{x}}.jpg"
-    #     )
-
-    #     def on_toggle(change):
-    #         if change["name"] == "value" and change["new"]:
-    #             left_date_picker.layout.display = "flex"
-    #             right_date_picker.layout.display = "flex"
-    #         else:
-    #             left_date_picker.layout.display = "none"
-    #             right_date_picker.layout.display = "none"
-
-    #     toggle.observe(on_toggle)
-
-    #     left_date_picker.observe(on_date_change)
-    #     right_date_picker.observe(on_date_change)
-
-    #     widget_box = widgets.HBox([left_date_picker, right_date_picker])
-    #     self.add_widget(widget_box, position="topright")
-
-    # def add_basemap_gui(self, options=None, position="topright"):
-    #     """Adds a graphical user interface (GUI) for selecting basemaps.
-
-    #     Args:
-    #         options (list, optional): A list of basemap options to display in the dropdown.
-    #             Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery", "CartoDB.DarkMatter"].
-    #         position (str, optional): The position of the widget on the map. Defaults to "topright".
-
-    #     Behavior:
-    #         - A toggle button is used to show or hide the dropdown and close button.
-    #         - The dropdown allows users to select a basemap from the provided options.
-    #         - The close button removes the widget from the map.
-
-    #     Event Handlers:
-    #         - `on_toggle_change`: Toggles the visibility of the dropdown and close button.
-    #         - `on_button_click`: Closes and removes the widget from the map.
-    #         - `on_dropdown_change`: Updates the map's basemap when a new option is selected.
-    #     """
-    #     if options is None:
-    #         options = [
-    #             "OpenStreetMap",
-    #             "OpenTopoMap",
-    #             "Esri.WorldImagery",
-    #         ]
-    #     toggle = ipywidgets.ToggleButton(
-    #         value=True,
-    #         button_style="",
-    #         tooltip="Click me",
-    #         icon="map",
-    #     )
-    #     toggle.layout = ipywidgets.Layout(width="38px", height="38px")
-
-    #     dropdown = ipywidgets.Dropdown(
-    #         options=options,
-    #         value=options[0],
-    #         description="Basemap:",
-    #         style={"description_width": "initial"},
-    #     )
-
-    #     dropdown.layout = ipywidgets.Layout(width="250px", height="38px")
-
-    #     button = ipywidgets.Button(
-    #         icon="times",
-    #     )
-    #     button.layout = ipywidgets.Layout(width="38px", height="38px")
-
-    #     hbox = ipywidgets.HBox([toggle, dropdown, button])
-
-    #     def on_toggle_change(change):
-    #         if change["new"]:
-    #             hbox.children = [toggle, dropdown, button]
-    #         else:
-    #             hbox.children = [toggle]
-
-    #     toggle.observe(on_toggle_change, names="value")
-
-    #     def on_button_click(b):
-    #         hbox.close()
-    #         toggle.close()
-    #         dropdown.close()
-    #         button.close()
-
-    #     button.on_click(on_button_click)
-
-    #     def on_dropdown_change(change):
-    #         if change["new"]:
-    #             self.layers = self.layers[:-2]
-    #             self.add_basemap(change["new"])
-
-    #     dropdown.observe(on_dropdown_change, names="value")
-
-    #     control = ipyleaflet.WidgetControl(widget=hbox, position=position)
-    #     self.add(control)
-
-    # def add_widget(self, widget, position="topright", **kwargs):
-    #     """Add a widget to the map.
-
-    #     Args:
-    #         widget (ipywidgets.Widget): The widget to add.
-    #         position (str, optional): Position of the widget. Defaults to "topright".
-    #         **kwargs: Additional keyword arguments for the WidgetControl.
-    #     """
-    #     control = ipyleaflet.WidgetControl(widget=widget, position=position, **kwargs)
-    #     self.add(control)
-
-    # to get the points
-    # for category, group in gdf_points.groupby("category"):
-    #     self.add_gdf(
-    #         group,
-    #         style={
-    #             "color": category_colors[category],
-    #             "radius": 6,
-    #             "fillOpacity": 0.7,
-    #         },
-    #         zoom_to_layer=False,
-    #     )
