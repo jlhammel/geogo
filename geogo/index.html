@@ -461,98 +461,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/intro/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Intro
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/map/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Map
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/foliummap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Foliummap
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/splitmaps/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Splitmaps
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../examples/stormriv/" class="md-nav__link">
         
   
@@ -576,58 +484,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples/widget.ipynb" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    None
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../examples/storm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Storm
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../examples/leafmap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Leafmap
     
   </span>
   
@@ -1201,7 +1063,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scroll_wheel_zoom</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;Esri.WorldImagery&quot;</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;OpenStreetMap.Mapnik&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add basemap to the map.</span>
 
 <span class="sd">        Args:</span>
@@ -1290,7 +1152,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">gdf_line</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_gdf</span><span class="p">(</span>
                 <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">([</span><span class="n">row</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">),</span>
-                <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+                <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">},</span>
                 <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="p">)</span>
 
@@ -1305,7 +1167,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">dataset</span> <span class="o">=</span> <span class="n">tracks</span><span class="o">.</span><span class="n">TrackDataset</span><span class="p">(</span><span class="n">basin</span><span class="o">=</span><span class="n">basin</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
         <span class="n">storms</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">keys</span>
         <span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_storm</span><span class="p">(</span><span class="n">storm</span><span class="p">)</span><span class="o">.</span><span class="n">season</span> <span class="k">for</span> <span class="n">storm</span> <span class="ow">in</span> <span class="n">storms</span><span class="p">]</span>
-        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">storms</span><span class="p">,</span> <span class="n">years</span><span class="p">))</span>  <span class="c1"># [(storm_name, year), ...]</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">storms</span><span class="p">,</span> <span class="n">years</span><span class="p">))</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">add_storm_wg</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -1317,52 +1179,35 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a storm widget to the map.</span>
 <span class="sd">        Args:</span>
-<span class="sd">            basin (str): The basin of the storm. Defaults to &quot;north_atlantic&quot;.</span>
+<span class="sd">            basin (str): The basin of the storm. Defaults to &#39;north_atlantic&#39;.</span>
 <span class="sd">            options (list, optional): A list of basemap options to display in the dropdown.</span>
-<span class="sd">                Defaults to [&quot;OpenStreetMap.Mapnik&quot;, &quot;OpenTopoMap&quot;, &quot;Esri.WorldImagery&quot;, &quot;CartoDB.DarkMatter&quot;].</span>
-<span class="sd">            source (str): The source of the storm data. Defaults to &quot;hurdat&quot;.</span>
-<span class="sd">            position (str): The position of the widget on the map. Defaults to &quot;topright&quot;.</span>
-<span class="sd">            legend (bool): Whether to show a legend for storm categories. Defaults to True.</span>
+<span class="sd">                Defaults to [&quot;OpenStreetMap.Mapnik&quot;, &quot;OpenTopoMap&quot;, &quot;Esri.WorldImagery&quot;].</span>
+<span class="sd">            source (str): The source of the storm data. Defaults to &#39;hurdat&#39;.</span>
+<span class="sd">            position (str): The position of the widget on the map. Defaults to &#39;topright&#39;.</span>
+<span class="sd">            legend (bool): Whether to show a legend. Defaults to True.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
         <span class="kn">import</span><span class="w"> </span><span class="nn">tropycal.tracks</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tracks</span>
-        <span class="kn">from</span><span class="w"> </span><span class="nn">ipyleaflet</span><span class="w"> </span><span class="kn">import</span> <span class="n">LegendControl</span><span class="p">,</span> <span class="n">WidgetControl</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">ipyleaflet</span><span class="w"> </span><span class="kn">import</span> <span class="n">WidgetControl</span>
 
         <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;OpenStreetMap&quot;</span><span class="p">,</span> <span class="s2">&quot;OpenTopoMap&quot;</span><span class="p">,</span> <span class="s2">&quot;Esri.WorldImagery&quot;</span><span class="p">]</span>
+            <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;OpenStreetMap.Mapnik&quot;</span><span class="p">,</span> <span class="s2">&quot;OpenTopoMap&quot;</span><span class="p">,</span> <span class="s2">&quot;Esri.WorldImagery&quot;</span><span class="p">]</span>
 
-        <span class="n">toggle_button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButton</span><span class="p">(</span>
+        <span class="n">widget_toggle</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButton</span><span class="p">(</span>
             <span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;globe&quot;</span><span class="p">,</span>
             <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Show/Hide storm &amp; basemap&quot;</span><span class="p">,</span>
             <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;38px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;38px&quot;</span><span class="p">),</span>
         <span class="p">)</span>
 
-        <span class="n">basemap_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-            <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
-            <span class="n">value</span><span class="o">=</span><span class="n">options</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Basemap:&quot;</span><span class="p">,</span>
-            <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;description_width&quot;</span><span class="p">:</span> <span class="s2">&quot;initial&quot;</span><span class="p">},</span>
-            <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;250px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;38px&quot;</span><span class="p">),</span>
-        <span class="p">)</span>
-
-        <span class="k">def</span><span class="w"> </span><span class="nf">on_basemap_change</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">])</span>
-
-        <span class="n">basemap_dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">on_basemap_change</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
-
         <span class="n">storm_list</span> <span class="o">=</span> <span class="p">[</span>
             <span class="p">(</span><span class="s2">&quot;Wilma&quot;</span><span class="p">,</span> <span class="mi">2005</span><span class="p">),</span>
             <span class="p">(</span><span class="s2">&quot;Katrina&quot;</span><span class="p">,</span> <span class="mi">2005</span><span class="p">),</span>
             <span class="p">(</span><span class="s2">&quot;Rita&quot;</span><span class="p">,</span> <span class="mi">2005</span><span class="p">),</span>
             <span class="p">(</span><span class="s2">&quot;Sandy&quot;</span><span class="p">,</span> <span class="mi">2012</span><span class="p">),</span>
-            <span class="p">(</span><span class="s2">&quot;Gert&quot;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">),</span>
             <span class="p">(</span><span class="s2">&quot;Hermine&quot;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">),</span>
             <span class="p">(</span><span class="s2">&quot;Matthew&quot;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">),</span>
             <span class="p">(</span><span class="s2">&quot;Otto&quot;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">),</span>
-            <span class="p">(</span><span class="s2">&quot;Patricia&quot;</span><span class="p">,</span> <span class="mi">2015</span><span class="p">),</span>
             <span class="p">(</span><span class="s2">&quot;Nate&quot;</span><span class="p">,</span> <span class="mi">2017</span><span class="p">),</span>
             <span class="p">(</span><span class="s2">&quot;Harvey&quot;</span><span class="p">,</span> <span class="mi">2017</span><span class="p">),</span>
             <span class="p">(</span><span class="s2">&quot;Irma&quot;</span><span class="p">,</span> <span class="mi">2017</span><span class="p">),</span>
@@ -1409,33 +1254,61 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
         <span class="n">storm_dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">on_storm_change</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
 
-        <span class="n">controls_box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">basemap_dropdown</span><span class="p">,</span> <span class="n">storm_dropdown</span><span class="p">])</span>
+        <span class="n">controls_box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">storm_dropdown</span><span class="p">])</span>
+        <span class="n">controls_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;flex&quot;</span> <span class="k">if</span> <span class="n">widget_toggle</span><span class="o">.</span><span class="n">value</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
 
-        <span class="k">def</span><span class="w"> </span><span class="nf">toggle_visibility</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+        <span class="n">widget_control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span>
+            <span class="n">widget</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">widget_toggle</span><span class="p">,</span> <span class="n">controls_box</span><span class="p">]),</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">widget_control</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">toggle_controls</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
             <span class="n">controls_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;flex&quot;</span> <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
 
-        <span class="n">toggle_button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">toggle_visibility</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
-
-        <span class="n">controls_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;flex&quot;</span> <span class="k">if</span> <span class="n">toggle_button</span><span class="o">.</span><span class="n">value</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
-
-        <span class="n">unified_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">toggle_button</span><span class="p">,</span> <span class="n">controls_box</span><span class="p">])</span>
-        <span class="n">control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">unified_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+        <span class="n">widget_toggle</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">toggle_controls</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">legend</span><span class="p">:</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">ipyleaflet</span><span class="w"> </span><span class="kn">import</span> <span class="n">WidgetControl</span>
+
             <span class="n">category_colors</span> <span class="o">=</span> <span class="p">{</span>
                 <span class="s2">&quot;TD&quot;</span><span class="p">:</span> <span class="s2">&quot;#6baed6&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;TS&quot;</span><span class="p">:</span> <span class="s2">&quot;#3182bd&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;Category 1&quot;</span><span class="p">:</span> <span class="s2">&quot;#31a354&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;Category 2&quot;</span><span class="p">:</span> <span class="s2">&quot;#addd8e&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;Category 3&quot;</span><span class="p">:</span> <span class="s2">&quot;#fdae6b&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Category 4&quot;</span><span class="p">:</span> <span class="s2">&quot;#fd8d3c&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Category 4&quot;</span><span class="p">:</span> <span class="s2">&quot;#fd8d8c&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;Category 5&quot;</span><span class="p">:</span> <span class="s2">&quot;#e31a1c&quot;</span><span class="p">,</span>
             <span class="p">}</span>
-            <span class="n">legend_control</span> <span class="o">=</span> <span class="n">LegendControl</span><span class="p">(</span>
-                <span class="n">legend</span><span class="o">=</span><span class="n">category_colors</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Storm Categories&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span>
+
+            <span class="n">legend_items</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">category_colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">legend_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;&lt;div style=&#39;margin-bottom:2px;&#39;&gt;&lt;span style=&#39;display:inline-block;width:12px;height:12px;background:</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">;margin-right:6px;&#39;&gt;&lt;/span&gt;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;</span>
+                <span class="p">)</span>
+
+            <span class="n">legend_html</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
+                <span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;&lt;div style=&#39;padding:4px 8px;font-size:13px;line-height:1.4;&#39;&gt;&lt;b&gt;Storm&lt;br&gt;Categories&lt;/b&gt;&lt;hr style=&#39;margin:4px 0;&#39;/&gt;&quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">legend_items</span><span class="p">)</span>
+                <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span>
             <span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">legend_control</span><span class="p">)</span>
+
+            <span class="n">toggle_legend_btn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButton</span><span class="p">(</span>
+                <span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;list&quot;</span><span class="p">,</span>
+                <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Show/Hide legend&quot;</span><span class="p">,</span>
+                <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;38px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;38px&quot;</span><span class="p">),</span>
+            <span class="p">)</span>
+
+            <span class="n">legend_box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">toggle_legend_btn</span><span class="p">,</span> <span class="n">legend_html</span><span class="p">])</span>
+
+            <span class="k">def</span><span class="w"> </span><span class="nf">toggle_legend_display</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+                <span class="n">legend_html</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span> <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
+
+            <span class="n">toggle_legend_btn</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">toggle_legend_display</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+            <span class="n">legend_control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">legend_box</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">legend_control</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">add_wms_layer</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -1468,23 +1341,26 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot;NASA GIBS&quot;</span><span class="p">,</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Time WMS Layer&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">custom_legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomleft&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a time-enabled WMS layer to the map.</span>
-
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a WMS layer with time control to the map.</span>
 <span class="sd">        Args:</span>
-<span class="sd">            m (Map): ipyleaflet Map instance.</span>
-<span class="sd">            url (str): WMS service URL (GIBS or compatible).</span>
-<span class="sd">            layers (str): Name of the WMS layer.</span>
-<span class="sd">            time (str): Date in &#39;YYYY-MM-DD&#39; format.</span>
-<span class="sd">            format (str): MIME type of the image layer.</span>
-<span class="sd">            transparent (bool): If background should be transparent.</span>
-<span class="sd">            attribution (str): Attribution text.</span>
-<span class="sd">            name (str): Display name for the layer.</span>
-
-<span class="sd">        Returns:</span>
-<span class="sd">            WMSLayer: The added WMS layer.</span>
+<span class="sd">            url (str): The WMS service URL. Defaults to &quot;https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi&quot;.</span>
+<span class="sd">            layers (str): The layers to display. Defaults to &quot;MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day&quot;.</span>
+<span class="sd">            time (str): The time parameter for the WMS request. Defaults to &quot;2020-07-05&quot;.</span>
+<span class="sd">            format (str): The image format. Defaults to &quot;image/png&quot;.</span>
+<span class="sd">            transparent (bool): Whether the layer is transparent. Defaults to True.</span>
+<span class="sd">            attribution (str): Attribution text. Defaults to &quot;NASA GIBS&quot;.</span>
+<span class="sd">            name (str): Name of the layer. Defaults to &quot;Time WMS Layer&quot;.</span>
+<span class="sd">            legend (bool): Whether to show a legend. Defaults to True.</span>
+<span class="sd">            custom_legend (dict, optional): Custom legend items. Defaults to None.</span>
+<span class="sd">            position (str): Position of the legend on the map. Defaults to &quot;bottomleft&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span><span class="w"> </span><span class="nn">ipyleaflet</span><span class="w"> </span><span class="kn">import</span> <span class="n">WMSLayer</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">ipyleaflet</span><span class="w"> </span><span class="kn">import</span> <span class="n">WMSLayer</span><span class="p">,</span> <span class="n">WidgetControl</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
 
         <span class="n">time_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">?TIME=</span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s2">&quot;</span>
 
@@ -1496,8 +1372,85 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">attribution</span><span class="o">=</span><span class="n">attribution</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
         <span class="p">)</span>
-
         <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">wms_layer</span><span class="p">)</span>
+
+        <span class="n">date_picker</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">(</span>
+            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Select Date&quot;</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">time</span><span class="p">),</span>
+            <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;200px&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">update_time</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]:</span>
+                <span class="n">new_date</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+                <span class="n">wms_layer</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">?TIME=</span><span class="si">{</span><span class="n">new_date</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="n">date_picker</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_time</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+        <span class="n">date_control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">date_picker</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">date_control</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">legend</span><span class="p">:</span>
+            <span class="n">built_in_legends</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;&lt; -10°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#313695&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;-10 to 0°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#4575b4&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;0 to 10°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#74add1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;10 to 20°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#abd9e9&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;20 to 30°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#fdae61&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;&gt; 30°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#d73027&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="n">legend_items</span> <span class="o">=</span> <span class="n">custom_legend</span> <span class="ow">or</span> <span class="n">built_in_legends</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">legend_items</span><span class="p">:</span>
+                <span class="n">title_html</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="s2">&quot;&lt;div style=&#39;text-align:center; font-size:12px; font-weight:bold;&#39;&gt;&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">layers</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                        <span class="s2">&quot;MODIS Aqua L3&quot;</span><span class="p">,</span> <span class="s2">&quot;MODIS Aqua L3&lt;br&gt;Land Surface Temp&quot;</span>
+                    <span class="p">)</span>
+                    <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&lt;hr style=&#39;margin:2px 0;&#39;&gt;&quot;</span>
+                <span class="p">)</span>
+
+                <span class="n">legend_html</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">()</span>
+                <span class="n">legend_html</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;&lt;div style=&#39;font-size:12px; line-height:1.4em; max-width:160px;&#39;&gt;&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title_html</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">legend_items</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">legend_html</span><span class="o">.</span><span class="n">value</span> <span class="o">+=</span> <span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;&lt;div style=&#39;display:flex; align-items:center; justify-content:center; margin:2px 0;&#39;&gt;&quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;&lt;span style=&#39;display:inline-block;width:12px;height:12px;&quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;background:</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">;margin-right:6px;border:1px solid #ccc;&#39;&gt;&lt;/span&gt;&quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;&lt;span style=&#39;text-align:center;&#39;&gt;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;&lt;/div&gt;&quot;</span>
+                    <span class="p">)</span>
+                <span class="n">legend_html</span><span class="o">.</span><span class="n">value</span> <span class="o">+=</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span>
+
+                <span class="n">legend_box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">legend_html</span><span class="p">])</span>
+                <span class="n">legend_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;flex&quot;</span>
+                <span class="n">legend_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">padding</span> <span class="o">=</span> <span class="s2">&quot;2px 6px&quot;</span>
+
+                <span class="n">toggle_button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButton</span><span class="p">(</span>
+                    <span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Toggle Legend&quot;</span><span class="p">,</span>
+                    <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;list&quot;</span><span class="p">,</span>
+                    <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;26px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;26px&quot;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">),</span>
+                <span class="p">)</span>
+
+                <span class="k">def</span><span class="w"> </span><span class="nf">toggle_visibility</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+                    <span class="n">legend_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;flex&quot;</span> <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
+
+                <span class="n">toggle_button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">toggle_visibility</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+                <span class="n">widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">toggle_button</span><span class="p">,</span> <span class="n">legend_box</span><span class="p">])</span>
+                <span class="n">control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No legend available for layer: </span><span class="si">{</span><span class="n">layers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
         <span class="k">return</span> <span class="n">wms_layer</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">add_geojson</span><span class="p">(</span>
@@ -1621,188 +1574,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">bounds</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">180</span><span class="p">],</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">180</span><span class="p">]]</span>
         <span class="n">overlay</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">VideoOverlay</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">video</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">overlay</span><span class="p">)</span>
-
-    <span class="c1"># def add_split_map(self, left_date, right_date, **kwargs):</span>
-    <span class="c1">#     &quot;&quot;&quot;Adds a split map to the map.</span>
-
-    <span class="c1">#     Args:</span>
-    <span class="c1">#         left_layer (ipyleaflet.Layer): The layer for the left side of the split map.</span>
-    <span class="c1">#         right_layer (ipyleaflet.Layer): The layer for the right side of the split map.</span>
-    <span class="c1">#         **kwargs: Additional keyword arguments for the ipyleaflet.SplitMapControl layer.</span>
-    <span class="c1">#     &quot;&quot;&quot;</span>
-    <span class="c1">#     from ipyleaflet import TileLayer, SplitMapControl</span>
-
-    <span class="c1">#     left_layer = TileLayer(</span>
-    <span class="c1">#         url=f&quot;https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Aqua_L3_EVI_16Day/default/{left_date}/GoogleMapsCompatible_Level9/{{z}}/{{y}}/{{x}}.jpg&quot;,</span>
-    <span class="c1">#         layers=&#39;MODIS_Aqua_L3_EVI_16Day&#39;,</span>
-    <span class="c1">#         format=&quot;image/png&quot;,</span>
-    <span class="c1">#         transparent=True,</span>
-    <span class="c1">#     )</span>
-
-    <span class="c1">#     right_layer = TileLayer(</span>
-    <span class="c1">#         url=f&quot;https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Aqua_L3_EVI_16Day/default/{right_date}/GoogleMapsCompatible_Level9/{{z}}/{{y}}/{{x}}.jpg&quot;,</span>
-    <span class="c1">#         layers=&#39;MODIS_Aqua_L3_EVI_16Day&#39;,</span>
-    <span class="c1">#         format=&quot;image/png&quot;,</span>
-    <span class="c1">#         transparent=True,</span>
-    <span class="c1">#     )</span>
-    <span class="c1">#     print(left_layer.url)</span>
-
-    <span class="c1">#     print(right_layer.url)</span>
-    <span class="c1">#     control = SplitMapControl(</span>
-    <span class="c1">#         left_layer=left_layer, right_layer=right_layer, **kwargs</span>
-    <span class="c1">#     )</span>
-    <span class="c1">#     self.add_control(control)</span>
-
-    <span class="c1">#     import ipywidgets as widgets</span>
-    <span class="c1">#     from datetime import date</span>
-
-    <span class="c1">#     left_date_picker = widgets.DatePicker(</span>
-    <span class="c1">#         description=&quot;Left Date&quot;,</span>
-    <span class="c1">#         value=date.fromisoformat(left_date),</span>
-    <span class="c1">#         layout=widgets.Layout(width=&quot;200px&quot;),</span>
-    <span class="c1">#     )</span>
-
-    <span class="c1">#     right_date_picker = widgets.DatePicker(</span>
-    <span class="c1">#         description=&quot;Right Date&quot;,</span>
-    <span class="c1">#         value=date.fromisoformat(right_date),</span>
-    <span class="c1">#         layout=widgets.Layout(width=&quot;200px&quot;),</span>
-    <span class="c1">#     )</span>
-
-    <span class="c1">#     toggle = widgets.ToggleButton(</span>
-    <span class="c1">#         value=True,</span>
-    <span class="c1">#         icon=&quot;globe&quot;,</span>
-    <span class="c1">#         tooltip=&quot;Show/Hide storm selector&quot;,</span>
-    <span class="c1">#         layout=widgets.Layout(width=&quot;38px&quot;, height=&quot;38px&quot;),</span>
-    <span class="c1">#     )</span>
-    <span class="c1">#     widget_box = widgets.HBox([toggle, left_date_picker, right_date_picker])</span>
-
-    <span class="c1">#     def on_date_change(change):</span>
-    <span class="c1">#         if change[&quot;name&quot;] == &quot;value&quot; and change[&quot;new&quot;] is not None:</span>
-    <span class="c1">#             new_left_date = left_date_picker.value.isoformat()</span>
-    <span class="c1">#             new_right_date = right_date_picker.value.isoformat()</span>
-
-    <span class="c1">#             left_layer.url = (</span>
-    <span class="c1">#                 f&quot;https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Aqua_L3_EVI_16Day/default/&quot;</span>
-    <span class="c1">#                 f&quot;{new_left_date}/GoogleMapsCompatible_Level9/{{z}}/{{y}}/{{x}}.jpg&quot;</span>
-    <span class="c1">#             )</span>
-
-    <span class="c1">#             right_layer.url = (</span>
-    <span class="c1">#                 f&quot;https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Aqua_L3_EVI_16Day/default/&quot;</span>
-    <span class="c1">#                 f&quot;{new_right_date}/GoogleMapsCompatible_Level9/{{z}}/{{y}}/{{x}}.jpg&quot;</span>
-    <span class="c1">#     )</span>
-
-    <span class="c1">#     def on_toggle(change):</span>
-    <span class="c1">#         if change[&quot;name&quot;] == &quot;value&quot; and change[&quot;new&quot;]:</span>
-    <span class="c1">#             left_date_picker.layout.display = &quot;flex&quot;</span>
-    <span class="c1">#             right_date_picker.layout.display = &quot;flex&quot;</span>
-    <span class="c1">#         else:</span>
-    <span class="c1">#             left_date_picker.layout.display = &quot;none&quot;</span>
-    <span class="c1">#             right_date_picker.layout.display = &quot;none&quot;</span>
-
-    <span class="c1">#     toggle.observe(on_toggle)</span>
-
-    <span class="c1">#     left_date_picker.observe(on_date_change)</span>
-    <span class="c1">#     right_date_picker.observe(on_date_change)</span>
-
-    <span class="c1">#     widget_box = widgets.HBox([left_date_picker, right_date_picker])</span>
-    <span class="c1">#     self.add_widget(widget_box, position=&quot;topright&quot;)</span>
-
-    <span class="c1"># def add_basemap_gui(self, options=None, position=&quot;topright&quot;):</span>
-    <span class="c1">#     &quot;&quot;&quot;Adds a graphical user interface (GUI) for selecting basemaps.</span>
-
-    <span class="c1">#     Args:</span>
-    <span class="c1">#         options (list, optional): A list of basemap options to display in the dropdown.</span>
-    <span class="c1">#             Defaults to [&quot;OpenStreetMap.Mapnik&quot;, &quot;OpenTopoMap&quot;, &quot;Esri.WorldImagery&quot;, &quot;CartoDB.DarkMatter&quot;].</span>
-    <span class="c1">#         position (str, optional): The position of the widget on the map. Defaults to &quot;topright&quot;.</span>
-
-    <span class="c1">#     Behavior:</span>
-    <span class="c1">#         - A toggle button is used to show or hide the dropdown and close button.</span>
-    <span class="c1">#         - The dropdown allows users to select a basemap from the provided options.</span>
-    <span class="c1">#         - The close button removes the widget from the map.</span>
-
-    <span class="c1">#     Event Handlers:</span>
-    <span class="c1">#         - `on_toggle_change`: Toggles the visibility of the dropdown and close button.</span>
-    <span class="c1">#         - `on_button_click`: Closes and removes the widget from the map.</span>
-    <span class="c1">#         - `on_dropdown_change`: Updates the map&#39;s basemap when a new option is selected.</span>
-    <span class="c1">#     &quot;&quot;&quot;</span>
-    <span class="c1">#     if options is None:</span>
-    <span class="c1">#         options = [</span>
-    <span class="c1">#             &quot;OpenStreetMap&quot;,</span>
-    <span class="c1">#             &quot;OpenTopoMap&quot;,</span>
-    <span class="c1">#             &quot;Esri.WorldImagery&quot;,</span>
-    <span class="c1">#         ]</span>
-    <span class="c1">#     toggle = ipywidgets.ToggleButton(</span>
-    <span class="c1">#         value=True,</span>
-    <span class="c1">#         button_style=&quot;&quot;,</span>
-    <span class="c1">#         tooltip=&quot;Click me&quot;,</span>
-    <span class="c1">#         icon=&quot;map&quot;,</span>
-    <span class="c1">#     )</span>
-    <span class="c1">#     toggle.layout = ipywidgets.Layout(width=&quot;38px&quot;, height=&quot;38px&quot;)</span>
-
-    <span class="c1">#     dropdown = ipywidgets.Dropdown(</span>
-    <span class="c1">#         options=options,</span>
-    <span class="c1">#         value=options[0],</span>
-    <span class="c1">#         description=&quot;Basemap:&quot;,</span>
-    <span class="c1">#         style={&quot;description_width&quot;: &quot;initial&quot;},</span>
-    <span class="c1">#     )</span>
-
-    <span class="c1">#     dropdown.layout = ipywidgets.Layout(width=&quot;250px&quot;, height=&quot;38px&quot;)</span>
-
-    <span class="c1">#     button = ipywidgets.Button(</span>
-    <span class="c1">#         icon=&quot;times&quot;,</span>
-    <span class="c1">#     )</span>
-    <span class="c1">#     button.layout = ipywidgets.Layout(width=&quot;38px&quot;, height=&quot;38px&quot;)</span>
-
-    <span class="c1">#     hbox = ipywidgets.HBox([toggle, dropdown, button])</span>
-
-    <span class="c1">#     def on_toggle_change(change):</span>
-    <span class="c1">#         if change[&quot;new&quot;]:</span>
-    <span class="c1">#             hbox.children = [toggle, dropdown, button]</span>
-    <span class="c1">#         else:</span>
-    <span class="c1">#             hbox.children = [toggle]</span>
-
-    <span class="c1">#     toggle.observe(on_toggle_change, names=&quot;value&quot;)</span>
-
-    <span class="c1">#     def on_button_click(b):</span>
-    <span class="c1">#         hbox.close()</span>
-    <span class="c1">#         toggle.close()</span>
-    <span class="c1">#         dropdown.close()</span>
-    <span class="c1">#         button.close()</span>
-
-    <span class="c1">#     button.on_click(on_button_click)</span>
-
-    <span class="c1">#     def on_dropdown_change(change):</span>
-    <span class="c1">#         if change[&quot;new&quot;]:</span>
-    <span class="c1">#             self.layers = self.layers[:-2]</span>
-    <span class="c1">#             self.add_basemap(change[&quot;new&quot;])</span>
-
-    <span class="c1">#     dropdown.observe(on_dropdown_change, names=&quot;value&quot;)</span>
-
-    <span class="c1">#     control = ipyleaflet.WidgetControl(widget=hbox, position=position)</span>
-    <span class="c1">#     self.add(control)</span>
-
-    <span class="c1"># def add_widget(self, widget, position=&quot;topright&quot;, **kwargs):</span>
-    <span class="c1">#     &quot;&quot;&quot;Add a widget to the map.</span>
-
-    <span class="c1">#     Args:</span>
-    <span class="c1">#         widget (ipywidgets.Widget): The widget to add.</span>
-    <span class="c1">#         position (str, optional): Position of the widget. Defaults to &quot;topright&quot;.</span>
-    <span class="c1">#         **kwargs: Additional keyword arguments for the WidgetControl.</span>
-    <span class="c1">#     &quot;&quot;&quot;</span>
-    <span class="c1">#     control = ipyleaflet.WidgetControl(widget=widget, position=position, **kwargs)</span>
-    <span class="c1">#     self.add(control)</span>
-
-    <span class="c1"># to get the points</span>
-    <span class="c1"># for category, group in gdf_points.groupby(&quot;category&quot;):</span>
-    <span class="c1">#     self.add_gdf(</span>
-    <span class="c1">#         group,</span>
-    <span class="c1">#         style={</span>
-    <span class="c1">#             &quot;color&quot;: category_colors[category],</span>
-    <span class="c1">#             &quot;radius&quot;: 6,</span>
-    <span class="c1">#             &quot;fillOpacity&quot;: 0.7,</span>
-    <span class="c1">#         },</span>
-    <span class="c1">#         zoom_to_layer=False,</span>
-    <span class="c1">#     )</span>
 </code></pre></div>
         </details>
 
@@ -1824,7 +1595,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
 
 <h3 id="geogo.geogo.Map.add_basemap" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s1">&#39;Esri.WorldImagery&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s1">&#39;OpenStreetMap.Mapnik&#39;</span><span class="p">)</span></code>
 
 
 <a href="#geogo.geogo.Map.add_basemap" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -1848,13 +1619,13 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <td><code>basemap</code></td>
         <td><code>str</code></td>
         <td><p>Basemap name. Defaults to "Esri.WorldImagery".</p></td>
-        <td><code>&#39;Esri.WorldImagery&#39;</code></td>
+        <td><code>&#39;OpenStreetMap.Mapnik&#39;</code></td>
       </tr>
   </tbody>
 </table>
         <details class="quote">
           <summary>Source code in <code>geogo/geogo.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;Esri.WorldImagery&quot;</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;OpenStreetMap.Mapnik&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add basemap to the map.</span>
 
 <span class="sd">    Args:</span>
@@ -2262,32 +2033,32 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
       <tr>
         <td><code>basin</code></td>
         <td><code>str</code></td>
-        <td><p>The basin of the storm. Defaults to "north_atlantic".</p></td>
+        <td><p>The basin of the storm. Defaults to 'north_atlantic'.</p></td>
         <td><code>&#39;north_atlantic&#39;</code></td>
       </tr>
       <tr>
         <td><code>options</code></td>
         <td><code>list</code></td>
         <td><p>A list of basemap options to display in the dropdown.
-Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery", "CartoDB.DarkMatter"].</p></td>
+Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery"].</p></td>
         <td><code>None</code></td>
       </tr>
       <tr>
         <td><code>source</code></td>
         <td><code>str</code></td>
-        <td><p>The source of the storm data. Defaults to "hurdat".</p></td>
+        <td><p>The source of the storm data. Defaults to 'hurdat'.</p></td>
         <td><code>&#39;hurdat&#39;</code></td>
       </tr>
       <tr>
         <td><code>position</code></td>
         <td><code>str</code></td>
-        <td><p>The position of the widget on the map. Defaults to "topright".</p></td>
+        <td><p>The position of the widget on the map. Defaults to 'topright'.</p></td>
         <td><code>&#39;topright&#39;</code></td>
       </tr>
       <tr>
         <td><code>legend</code></td>
         <td><code>bool</code></td>
-        <td><p>Whether to show a legend for storm categories. Defaults to True.</p></td>
+        <td><p>Whether to show a legend. Defaults to True.</p></td>
         <td><code>True</code></td>
       </tr>
   </tbody>
@@ -2304,52 +2075,35 @@ Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery", "CartoD
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a storm widget to the map.</span>
 <span class="sd">    Args:</span>
-<span class="sd">        basin (str): The basin of the storm. Defaults to &quot;north_atlantic&quot;.</span>
+<span class="sd">        basin (str): The basin of the storm. Defaults to &#39;north_atlantic&#39;.</span>
 <span class="sd">        options (list, optional): A list of basemap options to display in the dropdown.</span>
-<span class="sd">            Defaults to [&quot;OpenStreetMap.Mapnik&quot;, &quot;OpenTopoMap&quot;, &quot;Esri.WorldImagery&quot;, &quot;CartoDB.DarkMatter&quot;].</span>
-<span class="sd">        source (str): The source of the storm data. Defaults to &quot;hurdat&quot;.</span>
-<span class="sd">        position (str): The position of the widget on the map. Defaults to &quot;topright&quot;.</span>
-<span class="sd">        legend (bool): Whether to show a legend for storm categories. Defaults to True.</span>
+<span class="sd">            Defaults to [&quot;OpenStreetMap.Mapnik&quot;, &quot;OpenTopoMap&quot;, &quot;Esri.WorldImagery&quot;].</span>
+<span class="sd">        source (str): The source of the storm data. Defaults to &#39;hurdat&#39;.</span>
+<span class="sd">        position (str): The position of the widget on the map. Defaults to &#39;topright&#39;.</span>
+<span class="sd">        legend (bool): Whether to show a legend. Defaults to True.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">tropycal.tracks</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tracks</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">ipyleaflet</span><span class="w"> </span><span class="kn">import</span> <span class="n">LegendControl</span><span class="p">,</span> <span class="n">WidgetControl</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">ipyleaflet</span><span class="w"> </span><span class="kn">import</span> <span class="n">WidgetControl</span>
 
     <span class="k">if</span> <span class="n">options</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;OpenStreetMap&quot;</span><span class="p">,</span> <span class="s2">&quot;OpenTopoMap&quot;</span><span class="p">,</span> <span class="s2">&quot;Esri.WorldImagery&quot;</span><span class="p">]</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;OpenStreetMap.Mapnik&quot;</span><span class="p">,</span> <span class="s2">&quot;OpenTopoMap&quot;</span><span class="p">,</span> <span class="s2">&quot;Esri.WorldImagery&quot;</span><span class="p">]</span>
 
-    <span class="n">toggle_button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButton</span><span class="p">(</span>
+    <span class="n">widget_toggle</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButton</span><span class="p">(</span>
         <span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;globe&quot;</span><span class="p">,</span>
         <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Show/Hide storm &amp; basemap&quot;</span><span class="p">,</span>
         <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;38px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;38px&quot;</span><span class="p">),</span>
     <span class="p">)</span>
 
-    <span class="n">basemap_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-        <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
-        <span class="n">value</span><span class="o">=</span><span class="n">options</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Basemap:&quot;</span><span class="p">,</span>
-        <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;description_width&quot;</span><span class="p">:</span> <span class="s2">&quot;initial&quot;</span><span class="p">},</span>
-        <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;250px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;38px&quot;</span><span class="p">),</span>
-    <span class="p">)</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">on_basemap_change</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">])</span>
-
-    <span class="n">basemap_dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">on_basemap_change</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
-
     <span class="n">storm_list</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">(</span><span class="s2">&quot;Wilma&quot;</span><span class="p">,</span> <span class="mi">2005</span><span class="p">),</span>
         <span class="p">(</span><span class="s2">&quot;Katrina&quot;</span><span class="p">,</span> <span class="mi">2005</span><span class="p">),</span>
         <span class="p">(</span><span class="s2">&quot;Rita&quot;</span><span class="p">,</span> <span class="mi">2005</span><span class="p">),</span>
         <span class="p">(</span><span class="s2">&quot;Sandy&quot;</span><span class="p">,</span> <span class="mi">2012</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Gert&quot;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">),</span>
         <span class="p">(</span><span class="s2">&quot;Hermine&quot;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">),</span>
         <span class="p">(</span><span class="s2">&quot;Matthew&quot;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">),</span>
         <span class="p">(</span><span class="s2">&quot;Otto&quot;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;Patricia&quot;</span><span class="p">,</span> <span class="mi">2015</span><span class="p">),</span>
         <span class="p">(</span><span class="s2">&quot;Nate&quot;</span><span class="p">,</span> <span class="mi">2017</span><span class="p">),</span>
         <span class="p">(</span><span class="s2">&quot;Harvey&quot;</span><span class="p">,</span> <span class="mi">2017</span><span class="p">),</span>
         <span class="p">(</span><span class="s2">&quot;Irma&quot;</span><span class="p">,</span> <span class="mi">2017</span><span class="p">),</span>
@@ -2396,33 +2150,61 @@ Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery", "CartoD
 
     <span class="n">storm_dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">on_storm_change</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
 
-    <span class="n">controls_box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">basemap_dropdown</span><span class="p">,</span> <span class="n">storm_dropdown</span><span class="p">])</span>
+    <span class="n">controls_box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">storm_dropdown</span><span class="p">])</span>
+    <span class="n">controls_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;flex&quot;</span> <span class="k">if</span> <span class="n">widget_toggle</span><span class="o">.</span><span class="n">value</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">toggle_visibility</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+    <span class="n">widget_control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span>
+        <span class="n">widget</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">widget_toggle</span><span class="p">,</span> <span class="n">controls_box</span><span class="p">]),</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">widget_control</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">toggle_controls</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="n">controls_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;flex&quot;</span> <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
 
-    <span class="n">toggle_button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">toggle_visibility</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
-
-    <span class="n">controls_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;flex&quot;</span> <span class="k">if</span> <span class="n">toggle_button</span><span class="o">.</span><span class="n">value</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
-
-    <span class="n">unified_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">toggle_button</span><span class="p">,</span> <span class="n">controls_box</span><span class="p">])</span>
-    <span class="n">control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">unified_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+    <span class="n">widget_toggle</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">toggle_controls</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">legend</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">ipyleaflet</span><span class="w"> </span><span class="kn">import</span> <span class="n">WidgetControl</span>
+
         <span class="n">category_colors</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;TD&quot;</span><span class="p">:</span> <span class="s2">&quot;#6baed6&quot;</span><span class="p">,</span>
             <span class="s2">&quot;TS&quot;</span><span class="p">:</span> <span class="s2">&quot;#3182bd&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Category 1&quot;</span><span class="p">:</span> <span class="s2">&quot;#31a354&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Category 2&quot;</span><span class="p">:</span> <span class="s2">&quot;#addd8e&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Category 3&quot;</span><span class="p">:</span> <span class="s2">&quot;#fdae6b&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Category 4&quot;</span><span class="p">:</span> <span class="s2">&quot;#fd8d3c&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Category 4&quot;</span><span class="p">:</span> <span class="s2">&quot;#fd8d8c&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Category 5&quot;</span><span class="p">:</span> <span class="s2">&quot;#e31a1c&quot;</span><span class="p">,</span>
         <span class="p">}</span>
-        <span class="n">legend_control</span> <span class="o">=</span> <span class="n">LegendControl</span><span class="p">(</span>
-            <span class="n">legend</span><span class="o">=</span><span class="n">category_colors</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Storm Categories&quot;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span>
+
+        <span class="n">legend_items</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">category_colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">legend_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;&lt;div style=&#39;margin-bottom:2px;&#39;&gt;&lt;span style=&#39;display:inline-block;width:12px;height:12px;background:</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">;margin-right:6px;&#39;&gt;&lt;/span&gt;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">legend_html</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
+            <span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;&lt;div style=&#39;padding:4px 8px;font-size:13px;line-height:1.4;&#39;&gt;&lt;b&gt;Storm&lt;br&gt;Categories&lt;/b&gt;&lt;hr style=&#39;margin:4px 0;&#39;/&gt;&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">legend_items</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span>
         <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">legend_control</span><span class="p">)</span>
+
+        <span class="n">toggle_legend_btn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButton</span><span class="p">(</span>
+            <span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;list&quot;</span><span class="p">,</span>
+            <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Show/Hide legend&quot;</span><span class="p">,</span>
+            <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;38px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;38px&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+
+        <span class="n">legend_box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">toggle_legend_btn</span><span class="p">,</span> <span class="n">legend_html</span><span class="p">])</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">toggle_legend_display</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+            <span class="n">legend_html</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;block&quot;</span> <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
+
+        <span class="n">toggle_legend_btn</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">toggle_legend_display</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+        <span class="n">legend_control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">legend_box</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">legend_control</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -2436,14 +2218,14 @@ Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery", "CartoD
 
 
 <h3 id="geogo.geogo.Map.add_time_wms_layer" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_time_wms_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi&#39;</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="s1">&#39;MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s1">&#39;2020-07-05&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="s1">&#39;NASA GIBS&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Time WMS Layer&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_time_wms_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi&#39;</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="s1">&#39;MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s1">&#39;2020-07-05&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="s1">&#39;NASA GIBS&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Time WMS Layer&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">custom_legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;bottomleft&#39;</span><span class="p">)</span></code>
 
 
 <a href="#geogo.geogo.Map.add_time_wms_layer" class="headerlink" title="Permanent link">&para;</a></h3>
 
     <div class="doc doc-contents ">
 
-      <p>Adds a time-enabled WMS layer to the map.</p>
+      <p>Adds a WMS layer with time control to the map.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -2457,68 +2239,65 @@ Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery", "CartoD
   </thead>
   <tbody>
       <tr>
-        <td><code>m</code></td>
-        <td><code>Map</code></td>
-        <td><p>ipyleaflet Map instance.</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
         <td><code>url</code></td>
         <td><code>str</code></td>
-        <td><p>WMS service URL (GIBS or compatible).</p></td>
+        <td><p>The WMS service URL. Defaults to "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi".</p></td>
         <td><code>&#39;https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi&#39;</code></td>
       </tr>
       <tr>
         <td><code>layers</code></td>
         <td><code>str</code></td>
-        <td><p>Name of the WMS layer.</p></td>
+        <td><p>The layers to display. Defaults to "MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day".</p></td>
         <td><code>&#39;MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day&#39;</code></td>
       </tr>
       <tr>
         <td><code>time</code></td>
         <td><code>str</code></td>
-        <td><p>Date in 'YYYY-MM-DD' format.</p></td>
+        <td><p>The time parameter for the WMS request. Defaults to "2020-07-05".</p></td>
         <td><code>&#39;2020-07-05&#39;</code></td>
       </tr>
       <tr>
         <td><code>format</code></td>
         <td><code>str</code></td>
-        <td><p>MIME type of the image layer.</p></td>
+        <td><p>The image format. Defaults to "image/png".</p></td>
         <td><code>&#39;image/png&#39;</code></td>
       </tr>
       <tr>
         <td><code>transparent</code></td>
         <td><code>bool</code></td>
-        <td><p>If background should be transparent.</p></td>
+        <td><p>Whether the layer is transparent. Defaults to True.</p></td>
         <td><code>True</code></td>
       </tr>
       <tr>
         <td><code>attribution</code></td>
         <td><code>str</code></td>
-        <td><p>Attribution text.</p></td>
+        <td><p>Attribution text. Defaults to "NASA GIBS".</p></td>
         <td><code>&#39;NASA GIBS&#39;</code></td>
       </tr>
       <tr>
         <td><code>name</code></td>
         <td><code>str</code></td>
-        <td><p>Display name for the layer.</p></td>
+        <td><p>Name of the layer. Defaults to "Time WMS Layer".</p></td>
         <td><code>&#39;Time WMS Layer&#39;</code></td>
       </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>WMSLayer</code></td>
-      <td><p>The added WMS layer.</p></td>
-    </tr>
+      <tr>
+        <td><code>legend</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to show a legend. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>custom_legend</code></td>
+        <td><code>dict</code></td>
+        <td><p>Custom legend items. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>Position of the legend on the map. Defaults to "bottomleft".</p></td>
+        <td><code>&#39;bottomleft&#39;</code></td>
+      </tr>
   </tbody>
 </table>
         <details class="quote">
@@ -2532,23 +2311,26 @@ Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery", "CartoD
     <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot;NASA GIBS&quot;</span><span class="p">,</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Time WMS Layer&quot;</span><span class="p">,</span>
+    <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">custom_legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomleft&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a time-enabled WMS layer to the map.</span>
-
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a WMS layer with time control to the map.</span>
 <span class="sd">    Args:</span>
-<span class="sd">        m (Map): ipyleaflet Map instance.</span>
-<span class="sd">        url (str): WMS service URL (GIBS or compatible).</span>
-<span class="sd">        layers (str): Name of the WMS layer.</span>
-<span class="sd">        time (str): Date in &#39;YYYY-MM-DD&#39; format.</span>
-<span class="sd">        format (str): MIME type of the image layer.</span>
-<span class="sd">        transparent (bool): If background should be transparent.</span>
-<span class="sd">        attribution (str): Attribution text.</span>
-<span class="sd">        name (str): Display name for the layer.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        WMSLayer: The added WMS layer.</span>
+<span class="sd">        url (str): The WMS service URL. Defaults to &quot;https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi&quot;.</span>
+<span class="sd">        layers (str): The layers to display. Defaults to &quot;MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day&quot;.</span>
+<span class="sd">        time (str): The time parameter for the WMS request. Defaults to &quot;2020-07-05&quot;.</span>
+<span class="sd">        format (str): The image format. Defaults to &quot;image/png&quot;.</span>
+<span class="sd">        transparent (bool): Whether the layer is transparent. Defaults to True.</span>
+<span class="sd">        attribution (str): Attribution text. Defaults to &quot;NASA GIBS&quot;.</span>
+<span class="sd">        name (str): Name of the layer. Defaults to &quot;Time WMS Layer&quot;.</span>
+<span class="sd">        legend (bool): Whether to show a legend. Defaults to True.</span>
+<span class="sd">        custom_legend (dict, optional): Custom legend items. Defaults to None.</span>
+<span class="sd">        position (str): Position of the legend on the map. Defaults to &quot;bottomleft&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">ipyleaflet</span><span class="w"> </span><span class="kn">import</span> <span class="n">WMSLayer</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">ipyleaflet</span><span class="w"> </span><span class="kn">import</span> <span class="n">WMSLayer</span><span class="p">,</span> <span class="n">WidgetControl</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
 
     <span class="n">time_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">?TIME=</span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s2">&quot;</span>
 
@@ -2560,8 +2342,85 @@ Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery", "CartoD
         <span class="n">attribution</span><span class="o">=</span><span class="n">attribution</span><span class="p">,</span>
         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
     <span class="p">)</span>
-
     <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">wms_layer</span><span class="p">)</span>
+
+    <span class="n">date_picker</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">(</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Select Date&quot;</span><span class="p">,</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">time</span><span class="p">),</span>
+        <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;200px&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_time</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]:</span>
+            <span class="n">new_date</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+            <span class="n">wms_layer</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">?TIME=</span><span class="si">{</span><span class="n">new_date</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">date_picker</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_time</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+    <span class="n">date_control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">date_picker</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">date_control</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">legend</span><span class="p">:</span>
+        <span class="n">built_in_legends</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;&lt; -10°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#313695&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;-10 to 0°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#4575b4&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;0 to 10°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#74add1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;10 to 20°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#abd9e9&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;20 to 30°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#fdae61&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;&gt; 30°C&quot;</span><span class="p">:</span> <span class="s2">&quot;#d73027&quot;</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">legend_items</span> <span class="o">=</span> <span class="n">custom_legend</span> <span class="ow">or</span> <span class="n">built_in_legends</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">legend_items</span><span class="p">:</span>
+            <span class="n">title_html</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s2">&quot;&lt;div style=&#39;text-align:center; font-size:12px; font-weight:bold;&#39;&gt;&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">layers</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                    <span class="s2">&quot;MODIS Aqua L3&quot;</span><span class="p">,</span> <span class="s2">&quot;MODIS Aqua L3&lt;br&gt;Land Surface Temp&quot;</span>
+                <span class="p">)</span>
+                <span class="o">+</span> <span class="s2">&quot;&lt;/div&gt;&lt;hr style=&#39;margin:2px 0;&#39;&gt;&quot;</span>
+            <span class="p">)</span>
+
+            <span class="n">legend_html</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">()</span>
+            <span class="n">legend_html</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;&lt;div style=&#39;font-size:12px; line-height:1.4em; max-width:160px;&#39;&gt;&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title_html</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">legend_items</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">legend_html</span><span class="o">.</span><span class="n">value</span> <span class="o">+=</span> <span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;&lt;div style=&#39;display:flex; align-items:center; justify-content:center; margin:2px 0;&#39;&gt;&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;&lt;span style=&#39;display:inline-block;width:12px;height:12px;&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;background:</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">;margin-right:6px;border:1px solid #ccc;&#39;&gt;&lt;/span&gt;&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;&lt;span style=&#39;text-align:center;&#39;&gt;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&lt;/span&gt;&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;&lt;/div&gt;&quot;</span>
+                <span class="p">)</span>
+            <span class="n">legend_html</span><span class="o">.</span><span class="n">value</span> <span class="o">+=</span> <span class="s2">&quot;&lt;/div&gt;&quot;</span>
+
+            <span class="n">legend_box</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">legend_html</span><span class="p">])</span>
+            <span class="n">legend_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;flex&quot;</span>
+            <span class="n">legend_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">padding</span> <span class="o">=</span> <span class="s2">&quot;2px 6px&quot;</span>
+
+            <span class="n">toggle_button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButton</span><span class="p">(</span>
+                <span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;Toggle Legend&quot;</span><span class="p">,</span>
+                <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;list&quot;</span><span class="p">,</span>
+                <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;26px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;26px&quot;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">),</span>
+            <span class="p">)</span>
+
+            <span class="k">def</span><span class="w"> </span><span class="nf">toggle_visibility</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+                <span class="n">legend_box</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">display</span> <span class="o">=</span> <span class="s2">&quot;flex&quot;</span> <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
+
+            <span class="n">toggle_button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">toggle_visibility</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">toggle_button</span><span class="p">,</span> <span class="n">legend_box</span><span class="p">])</span>
+            <span class="n">control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No legend available for layer: </span><span class="si">{</span><span class="n">layers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="n">wms_layer</span>
 </code></pre></div>
         </details>
@@ -2702,7 +2561,7 @@ Defaults to ["OpenStreetMap.Mapnik", "OpenTopoMap", "Esri.WorldImagery", "CartoD
     <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">gdf_line</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_gdf</span><span class="p">(</span>
             <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">([</span><span class="n">row</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">),</span>
-            <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+            <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">],</span> <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">},</span>
             <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="p">)</span>
 

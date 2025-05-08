@@ -18,7 +18,7 @@
         <link rel="prev" href="../stormriv/">
       
       
-        <link rel="next" href="../leafmap/">
+        <link rel="next" href="../StormWMS/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -463,127 +463,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../intro/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Intro
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../map/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Map
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../foliummap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Foliummap
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../splitmaps/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Splitmaps
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../stormriv/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Stormriv
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../widget.ipynb" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    None
     
   </span>
   
@@ -622,29 +507,6 @@
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../leafmap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Leafmap
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1295,19 +1157,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Geogo inputs HURDAT2 data onto an interactive map with a dropdown widget allowing for transition between hurricanes.</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1333,6 +1184,17 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>add_storm_wg allows the user to switch between storms using a dropdown widget and a legend to indicate the hurricane category.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -1353,13 +1215,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geogo</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">()</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_tropycal_storm</span><span class="p">((</span><span class="s2">"helene"</span><span class="p">,</span> <span class="mi">2024</span><span class="p">))</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add_storm_wg</span><span class="p">()</span>
 <span class="n">m</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">m = geogo.Map()
-m.add_basemap()
-m.add_tropycal_storm(("helene", 2024))
+m.add_storm_wg()
 m</div>
 </div>
 </div>
@@ -1373,7 +1233,7 @@ m</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Storm WG allows the user to switch between storms using a dropdown widget and a legend to indicate the hurricane category.</p>
+<p>If the hurricane you wish to track is not in the dropdown widget you can still analyze it by using add_tropycal_storm. Just input the (("hurricane name", "year")).</p>
 </div>
 </div>
 </div>
@@ -1397,11 +1257,13 @@ m</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">geogo</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_storm_wg</span><span class="p">()</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">()</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add_tropycal_storm</span><span class="p">((</span><span class="s2">"maria"</span><span class="p">,</span> <span class="mi">2017</span><span class="p">))</span>
 <span class="n">m</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-3">m = geogo.Map()
-m.add_storm_wg()
+m.add_basemap()
+m.add_tropycal_storm(("maria", 2017))
 m</div>
 </div>
 </div>
@@ -1438,7 +1300,7 @@ m</div>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 5, 2025 19:10:51"><span class="timeago" datetime="2025-05-05T19:10:51+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 5, 2025 19:10:51">2025-05-05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 8, 2025 16:33:27"><span class="timeago" datetime="2025-05-08T16:33:27+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 8, 2025 16:33:27">2025-05-08</span>
   </span>
 
     
