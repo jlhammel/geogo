@@ -11,18 +11,19 @@
 -   GitHub repo: https://github.com/jlhammel/geogo
 -   Documentation: <https://jlhammel.github.io/geogo>
 
--   Geogo is a Python package meant for climatologists to analyze hurricane data from HURDAT2. Geogo using ipyleaflet to create interactive maps for analysis. This package will allow you to use WMS, raster, geojson, image, and video files to further understand the impact of past hurricanes. Using interactive maps and hurricane track data from the Python package tropycal, the user can track the hurricane and analyze the landscape around the impacted areas.
+-   Geogo is a Python package meant for climatologists to analyze hurricane data from HURDAT2. Geogo uses ipyleaflet to create interactive maps for analysis. This package will allow you to use WMS, raster, geojson, image, and video files to further understand the impact of past hurricanes. Using interactive maps, hurricane track data from the Python package tropycal, and NASA GIBS data the user can track the hurricane and analyze the landscape around the impacted areas.
 
 ## Requirements:
-- Install from PyPi
-folium
-geopandas
-ipyleaflet
-leafmap
-localtileserver
-mapclassify
-matplotlib
-numpy
+- fiona
+- folium
+- geopandas
+- ipyleaflet
+- leafmap
+- localtileserver
+- mapclassify
+- matplotlib
+- numpy
+- tropycal
 
 ## Features
 
