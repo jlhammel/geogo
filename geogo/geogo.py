@@ -342,12 +342,13 @@ class Map(ipyleaflet.Map):
         if legend:
             built_in_legends = {
                 "MODIS_Aqua_L3_Land_Surface_Temp_Daily_Day": {
-                    "< -10°C": "#313695",
-                    "-10 to 0°C": "#4575b4",
-                    "0 to 10°C": "#74add1",
-                    "10 to 20°C": "#abd9e9",
-                    "20 to 30°C": "#fdae61",
-                    "> 30°C": "#d73027",
+                    "< -10°C": "#000080",
+                    "0°C": "#0000FF",
+                    "10°C": "#00FFFF",
+                    "20°C": "#00FF00",
+                    "30°C": "#FFFF00",
+                    "40°C": "#FFA500",
+                    "≥ 50°C": "#FF0000",
                 }
             }
 
