@@ -3,7 +3,7 @@
 
 [![image](https://img.shields.io/pypi/v/geogo.svg)](https://pypi.python.org/pypi/geogo)
 [![image](https://img.shields.io/conda/vn/conda-forge/geogo.svg)](https://anaconda.org/conda-forge/geogo)
-[![image](/Users/jordyn/Downloads/GEOGO.png)](https://github.com/jlhammel/geogo)
+[![image](docs/GEOGO.png)](https://github.com/jlhammel/geogo)
 
 
 **A python package for geospatial analysis and mapping**
