@@ -2,6 +2,6 @@
 
 __author__ = """Jordyn Hammel"""
 __email__ = "jlhammel134@gmail.com"
-__version__ = "0.0.3"
+__version__ = "1.0.0"
 
 from .geogo import *
