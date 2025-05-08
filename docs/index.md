@@ -2,7 +2,7 @@
 
 
 [![image](https://img.shields.io/pypi/v/geogo.svg)](https://pypi.python.org/pypi/geogo)
-[![image](./logo.png)](https://github.com/jlhammel/geogo/blob/main/docs/GEOGO.png)
+[![GEOGO logo](https://raw.githubusercontent.com/jlhammel/geogo/main/docs/GEOGO.png)](https://github.com/jlhammel/geogo/blob/main/docs/GEOGO.png)
 
 **A python package for geospatial analysis and mapping hurricane tracks**
 
