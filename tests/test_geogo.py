@@ -2,7 +2,6 @@
 
 """Tests for `geogo` package."""
 
-
 import unittest
 
 from geogo import geogo
